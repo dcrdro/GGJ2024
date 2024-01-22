@@ -1,20 +1,14 @@
 using UnityEngine;
 
-public enum ResourceType
-{
-    _Test1,
-    _Test2,
-}
-
 public class Resoure : MonoBehaviour
 {
     public ResourceType resourceType;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<Inventory>(out var inv))
+        if (other.TryGetComponent<Player>(out var inv))
         {
-            inv.Add(resourceType);
+            FindObjectOfType<Inventory>().Add(resourceType);
             Destroy(gameObject);
         }
     }

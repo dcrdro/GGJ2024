@@ -222,7 +222,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5804376192201894194}
   - component: {fileID: 3152602540173139665}
-  - component: {fileID: 6442957664493663642}
   - component: {fileID: 5825452989320460871}
   - component: {fileID: 932460483957142190}
   m_Layer: 0
@@ -263,19 +262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotSpd: 360
---- !u!114 &6442957664493663642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8813790803980428754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14920277455b2841959afd37bf60f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items: 
 --- !u!54 &5825452989320460871
 Rigidbody:
   m_ObjectHideFlags: 0

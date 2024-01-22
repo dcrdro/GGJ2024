@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a83080510bfe1542a4a500171e6c861, type: 3}
-  m_Name: ResourcesDatabase
+  m_Script: {fileID: 11500000, guid: ba283ab13183dd440938c8f20468ed77, type: 3}
+  m_Name: _Resource_1
   m_EditorClassIdentifier: 
-  resources:
-  - {fileID: 11400000, guid: c1d079473ff51594c9ad69e280f19d69, type: 2}
-  - {fileID: 11400000, guid: fc37b9a0ee87e4b4f8262683e1df2810, type: 2}
+  name: Res 1
+  resourceType: 0
+  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}

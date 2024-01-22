@@ -32,21 +32,17 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Remove(ResourceType type, bool single)
+    public void Remove(ResourceType type, int count)
     {
         var item = items.Find(x => x.type == type);
         if (item != null)
         {
-            if (single)
+            item.count -= count;
+            if (item.count <= 0)
             {
-                item.count--;
-                if (item.count <= 0)
-                {
-                    Remove(item);
-                }
-                else Updated?.Invoke(item);
+                Remove(item);
             }
-            else Remove(item);
+            else Updated?.Invoke(item);
         }
     }
 
@@ -54,5 +50,10 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
         Removed?.Invoke(item);
+    }
+
+    public bool Has(ResourceType type, int count = 1)
+    {
+        return items.Find(x => x.type == type && x.count >= count) != null;
     }
 }

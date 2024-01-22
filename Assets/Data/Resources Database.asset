@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9efe89d0342df5c439a107c30a1a3f3c, type: 3}
-  m_Name: _TestItem1
+  m_Script: {fileID: 11500000, guid: 084ec77d7bf62ea4ea68c3a28286e1ff, type: 3}
+  m_Name: Resources Database
   m_EditorClassIdentifier: 
-  name: My item 1
-  resourceType: 0
-  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  resources:
+  - {fileID: 11400000, guid: ae98553ab4922dd4f9057287ed1ecf9b, type: 2}
+  - {fileID: 11400000, guid: b7376eefb3cbfab45a8014d8f16a5026, type: 2}
