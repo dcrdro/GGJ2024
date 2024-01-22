@@ -1,4 +1,5 @@
-﻿using Core;
+﻿using System;
+using Core;
 using UnityEngine;
 
 namespace EnemyLogic
@@ -36,5 +37,15 @@ namespace EnemyLogic
       
       Instantiate(prefab, transform.position, Quaternion.identity, container);
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+      float radius = 0.5f;
+
+      Gizmos.color = Color.red;
+      Gizmos.DrawSphere(transform.position, radius);
+    }
+#endif
   }
 }
