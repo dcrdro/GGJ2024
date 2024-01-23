@@ -21,6 +21,9 @@ namespace EnemyLogic
 
     public void ToggleMovement(bool state)
     {
+      if(enabled == state)
+        return;
+      
       _agent.isStopped = !state;
       enabled = state;
     }
