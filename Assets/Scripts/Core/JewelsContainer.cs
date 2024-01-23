@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using JewelLogic;
+using UnityEngine;
 
 namespace Core
 {
@@ -7,20 +8,19 @@ namespace Core
     public static JewelsContainer Instance;
     
     [SerializeField]
-    private GameObject[] _jewels;
+    private Jewel[] _jewels;
 
     #region Properties
 
     public float Length => _jewels.Length;
     
-    public GameObject this[int index]
+    public Jewel this[int index]
     {
       get => _jewels[index];
       set => _jewels[index] = value;
     }
 
     #endregion
-    
 
     private void Awake() => 
       Instance = this;

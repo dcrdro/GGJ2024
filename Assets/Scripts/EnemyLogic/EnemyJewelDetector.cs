@@ -1,4 +1,5 @@
 ﻿using Core;
+using JewelLogic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,21 +13,21 @@ namespace EnemyLogic
 
     private void Start()
     {
-      GameObject closestJewel =  FindClosestJewel();
-      _movement.SetTarget(closestJewel.transform.position);
+      Jewel closestJewel =  FindClosestJewel();
+      _movement.SetTarget(closestJewel.Position);
     }
 
-    private GameObject FindClosestJewel()
+    private Jewel FindClosestJewel()
     {
-      GameObject closestJewel = null;
+      Jewel closestJewel = null;
       float minDistance = Mathf.Infinity;
 
       for (int jewelIndex = 0; jewelIndex < JewelsContainer.Instance.Length; jewelIndex++)
       {
         NavMeshPath navMeshPath = new NavMeshPath();
-        GameObject jewel = JewelsContainer.Instance[jewelIndex];
+        Jewel jewel = JewelsContainer.Instance[jewelIndex];
         
-        if (NavMesh.CalculatePath(transform.position, jewel.transform.position, NavMesh.AllAreas, navMeshPath))
+        if (NavMesh.CalculatePath(transform.position, jewel.Position, NavMesh.AllAreas, navMeshPath))
         {
           float distance = CalculatePathDistance(navMeshPath);
 
