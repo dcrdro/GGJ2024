@@ -16,13 +16,19 @@ namespace EnemyLogic.States
       
       _movement.ToggleMovement(true);
       _movement.SetTarget(closestSpawnPoint.position);
+
+      _movement.OnTargetReached += OnReachedTarget;
     }
 
     public void Exit()
     {
       _movement.ToggleMovement(false);
+      _movement.OnTargetReached -= OnReachedTarget;
     }
-    
+
+    private void OnReachedTarget() => 
+      Destroy(gameObject);
+
     private Transform FindClosestSpawnPoint()
     {
       Transform closestSpawnPoint = null;
