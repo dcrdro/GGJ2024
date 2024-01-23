@@ -12,6 +12,7 @@ namespace Core
     #region Properties
 
     public Transform this[int index] => _spawnPoints[index];
+    public int Length => _spawnPoints.Length;
 
     #endregion
 
