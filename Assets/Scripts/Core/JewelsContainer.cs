@@ -13,7 +13,7 @@ namespace Core
 
     #region Properties
 
-    public float Length => _jewels.Count;
+    public int Length => _jewels.Count;
     
     public Jewel this[int index]
     {

@@ -19,9 +19,15 @@ namespace EnemyLogic
     public void SetTarget(Vector3 position) => 
       _agent.SetDestination(position);
 
+    public void ToggleMovement(bool state)
+    {
+      _agent.isStopped = !state;
+      enabled = state;
+    }
+    
     private void Update()
     {
-      if (_agent.remainingDistance <= 0.1f) 
+      if (_agent.remainingDistance <= 0.2f) 
         OnTargetReached?.Invoke();
     }
 
