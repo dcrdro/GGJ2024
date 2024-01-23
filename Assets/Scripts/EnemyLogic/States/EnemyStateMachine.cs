@@ -26,6 +26,9 @@ namespace EnemyLogic.States
       Enter<MoveToJewelState>();
     }
 
+    private void OnDestroy() => 
+      _activeState.Exit();
+
     public void AddState(Type stateType, IExitableState state) => 
       _states.Add(stateType, state);
 
