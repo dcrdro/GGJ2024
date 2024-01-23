@@ -11,10 +11,38 @@ namespace EnemyLogic
     [SerializeField, HideInInspector]
     private EnemyMovement _movement;
 
-    private void Start()
+    #region Properties
+
+    public Jewel CurrentTargetJewel => _currentJewel;
+
+    #endregion
+
+    #region Fields
+
+    private Jewel _currentJewel;
+
+    #endregion
+
+    private void Start() =>
+      UpdateCurrentTarget();
+
+    private void OnDestroy() =>
+      DisableDetection();
+
+    public void DisableDetection() =>
+      _currentJewel.OnPickedUp -= UpdateCurrentTarget;
+
+    private void UpdateCurrentTarget()
     {
-      Jewel closestJewel =  FindClosestJewel();
+      if (_currentJewel != null)
+        _currentJewel.OnPickedUp -= UpdateCurrentTarget;
+
+      Jewel closestJewel = FindClosestJewel();
+
       _movement.SetTarget(closestJewel.Position);
+      _currentJewel = closestJewel;
+
+      _currentJewel.OnPickedUp += UpdateCurrentTarget;
     }
 
     private Jewel FindClosestJewel()
@@ -26,7 +54,7 @@ namespace EnemyLogic
       {
         NavMeshPath navMeshPath = new NavMeshPath();
         Jewel jewel = JewelsContainer.Instance[jewelIndex];
-        
+
         if (NavMesh.CalculatePath(transform.position, jewel.Position, NavMesh.AllAreas, navMeshPath))
         {
           float distance = CalculatePathDistance(navMeshPath);
