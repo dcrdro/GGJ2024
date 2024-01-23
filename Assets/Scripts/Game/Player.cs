@@ -5,6 +5,8 @@ public class Player: MonoBehaviour
     public float speed = 5f;
     public float rotSpd = 5f;
 
+    public Animator animator;
+
     private Quaternion trot;
 
     void Update()
@@ -21,5 +23,7 @@ public class Player: MonoBehaviour
             trot = Quaternion.LookRotation(movement);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, trot, rotSpd * Time.deltaTime);
         }
+
+        animator.SetFloat("MoveSpeed", movement.magnitude);
     }
 }
