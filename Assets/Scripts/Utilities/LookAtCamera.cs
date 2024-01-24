@@ -21,7 +21,7 @@ namespace Utilities
       Vector3 direction = (_mainCamera.transform.position - transform.position).normalized;
       Quaternion lookRotation = Quaternion.LookRotation(direction);
 
-      transform.rotation = Quaternion.Euler(-lookRotation.eulerAngles.x, 0, 0);
+      transform.rotation = Quaternion.Euler(lookRotation.eulerAngles.x, 0, 0);
     }
   }
 }
