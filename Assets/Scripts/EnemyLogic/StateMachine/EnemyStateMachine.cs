@@ -24,7 +24,7 @@ namespace EnemyLogic.StateMachine
       foreach (ExitableStateBase state in _notBakedStates) 
         AddState(state.GetType(), state);
       
-      Enter<MoveToJewelState>();
+      Enter<MoveToHouseEntranceState>();
     }
 
     private void OnDestroy() => 
