@@ -3,7 +3,7 @@ using Extensions;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace EnemyLogic.States
+namespace EnemyLogic.StateMachine.States
 {
   public class EscapeFromHouseState : StateBase, IState
   {

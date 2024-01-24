@@ -1,7 +1,7 @@
 ﻿using JewelLogic;
 using UnityEngine;
 
-namespace EnemyLogic.States
+namespace EnemyLogic.StateMachine.States
 {
   public class JewelPickUpState : StateBase, IPayloadedState<Jewel>
   {

@@ -1,4 +1,4 @@
-﻿namespace EnemyLogic.States
+﻿namespace EnemyLogic.StateMachine.States
 {
   public interface IState : IExitableState
   {

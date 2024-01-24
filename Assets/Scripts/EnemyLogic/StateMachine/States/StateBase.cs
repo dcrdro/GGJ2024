@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace EnemyLogic.States
+namespace EnemyLogic.StateMachine.States
 {
   public abstract class StateBase : MonoBehaviour, IExitableState
   {

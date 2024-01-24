@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using EnemyLogic.StateMachine.States;
 using UnityEngine;
 
-namespace EnemyLogic.States
+namespace EnemyLogic.StateMachine
 {
   public class EnemyStateMachine : MonoBehaviour
   {
