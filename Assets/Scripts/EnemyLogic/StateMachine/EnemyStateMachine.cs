@@ -8,7 +8,7 @@ namespace EnemyLogic.StateMachine
   public class EnemyStateMachine : MonoBehaviour
   {
     [SerializeField]
-    private StateBase[] _notBakedStates;
+    private ExitableStateBase[] _notBakedStates;
     
     #region Fields
     
@@ -21,7 +21,7 @@ namespace EnemyLogic.StateMachine
     {
       _states = new Dictionary<Type, IExitableState>();
 
-      foreach (StateBase state in _notBakedStates) 
+      foreach (ExitableStateBase state in _notBakedStates) 
         AddState(state.GetType(), state);
       
       Enter<MoveToJewelState>();

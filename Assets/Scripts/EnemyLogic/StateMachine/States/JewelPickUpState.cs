@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EnemyLogic.StateMachine.States
 {
-  public class JewelPickUpState : StateBase, IPayloadedState<Jewel>
+  public class JewelPickUpState : ExitableStateBase, IPayloadedState<Jewel>
   {
     [SerializeField, HideInInspector]
     private EnemyStateMachine _stateMachine;
@@ -12,11 +12,6 @@ namespace EnemyLogic.StateMachine.States
     {
       jewel.PickUp();
       _stateMachine.Enter<EscapeFromHouseState>();
-    }
-
-    public void Exit()
-    {
-      
     }
 
 #if UNITY_EDITOR

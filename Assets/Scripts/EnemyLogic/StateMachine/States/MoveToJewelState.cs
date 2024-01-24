@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 namespace EnemyLogic.StateMachine.States
 {
-  public class MoveToJewelState : StateBase, IState
+  public class MoveToJewelState : ExitableStateBase, IState
   {
     [SerializeField, HideInInspector]
     private EnemyMovement _movement;
@@ -28,8 +28,10 @@ namespace EnemyLogic.StateMachine.States
       _currentJewel.OnPickedUp += FindTarget;
     }
 
-    public void Exit()
+    public override void Exit()
     {
+      base.Exit();
+      
       _movement.ToggleMovement(false);
       _movement.OnTargetReached -= OnReachedJewel;
       _currentJewel.OnPickedUp -= FindTarget;

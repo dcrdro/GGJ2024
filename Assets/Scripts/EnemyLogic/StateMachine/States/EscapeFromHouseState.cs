@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 namespace EnemyLogic.StateMachine.States
 {
-  public class EscapeFromHouseState : StateBase, IState
+  public class EscapeFromHouseState : ExitableStateBase, IState
   {
     [SerializeField, HideInInspector]
     private EnemyMovement _movement;
@@ -20,8 +20,10 @@ namespace EnemyLogic.StateMachine.States
       _movement.OnTargetReached += OnReachedTarget;
     }
 
-    public void Exit()
+    public override void Exit()
     {
+      base.Exit();
+      
       _movement.ToggleMovement(false);
       _movement.OnTargetReached -= OnReachedTarget;
     }
