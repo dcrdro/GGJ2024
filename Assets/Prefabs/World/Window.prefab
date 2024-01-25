@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1863828860523954882}
   m_Layer: 0
-  m_Name: UnlockingPoint
+  m_Name: OutsidePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6717901469590072956}
   m_Layer: 0
-  m_Name: EnteringPoint
+  m_Name: InsidePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _body: {fileID: 7376990224480540441}
-  _unlockingPoint: {fileID: 1863828860523954882}
+  _outsidePoint: {fileID: 0}
   _enteringPoint: {fileID: 6717901469590072956}
 --- !u!1 &7376990224480540441
 GameObject:

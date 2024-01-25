@@ -5,11 +5,11 @@ namespace HouseLogic.Entrances
   public class Window : EntranceBase
   {
     [SerializeField]
-    private Transform _enteringPoint;
+    private Transform _insidePoint;
 
     #region Properties
 
-    public Transform EnteringPoint => _enteringPoint;
+    public Transform InsidePoint => _insidePoint;
 
     #endregion
   }

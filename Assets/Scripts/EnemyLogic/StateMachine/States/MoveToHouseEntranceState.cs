@@ -24,7 +24,7 @@ namespace EnemyLogic.StateMachine.States
     {
       _targetEntrance = FindClosestEntrance();
       
-      _movement.SetTarget(_targetEntrance.Position);
+      _movement.SetTarget(_targetEntrance.OutsidePoint);
       _movement.ToggleMovement(true);
       
       _movement.OnTargetReached += OnEntranceReached;
@@ -49,7 +49,7 @@ namespace EnemyLogic.StateMachine.States
       foreach (EntranceBase entrance in HouseEntrancesContainer.Instance.Entrances)
       {
         NavMeshPath navMeshPath = new NavMeshPath();
-        if (NavMesh.CalculatePath(transform.position, entrance.Position, NavMesh.AllAreas, navMeshPath))
+        if (NavMesh.CalculatePath(transform.position, entrance.OutsidePoint, NavMesh.AllAreas, navMeshPath))
         {
           float distance = NavMeshExtensions.CalculatePathDistance(navMeshPath);
 

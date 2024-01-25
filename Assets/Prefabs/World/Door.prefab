@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3202061583099044473}
   m_Layer: 0
-  m_Name: UnlockingPoint
+  m_Name: OutsidePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,4 +183,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _body: {fileID: 2287599830054126189}
-  _unlockingPoint: {fileID: 3202061583099044473}
+  _outsidePoint: {fileID: 3202061583099044473}

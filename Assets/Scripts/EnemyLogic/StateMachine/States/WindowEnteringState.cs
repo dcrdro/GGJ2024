@@ -50,7 +50,7 @@ namespace EnemyLogic.StateMachine.States
 
     private void OnWindowEnteringActionComplete()
     {
-      transform.position = _window.EnteringPoint.position;
+      transform.position = _window.InsidePoint.position;
       _stateMachine.Enter<MoveToJewelState>();
     }
 
