@@ -1,8 +1,5 @@
-﻿using Core;
-using Extensions;
-using HouseLogic.Entrances;
+﻿using Extensions;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace EnemyLogic.StateMachine.States
 {
@@ -13,7 +10,7 @@ namespace EnemyLogic.StateMachine.States
 
     public void Enter()
     {
-      Transform closestSpawnPoint = FindClosestSpawnPoint();
+      Transform closestSpawnPoint = NavMeshExtensions.FindClosestSpawnPoint(transform.position);
       
       _movement.ToggleMovement(true);
       _movement.SetTarget(closestSpawnPoint.position);
@@ -31,54 +28,6 @@ namespace EnemyLogic.StateMachine.States
 
     private void OnReachedTarget() => 
       Destroy(gameObject);
-
-    private EntranceBase FindClosestEntrance()
-    {
-      EntranceBase closestEntrance = null;
-      float minDistance = Mathf.Infinity;
-
-      foreach (EntranceBase entrance in HouseEntrancesContainer.Instance.Entrances)
-      {
-        NavMeshPath navMeshPath = new NavMeshPath();
-        if (NavMesh.CalculatePath(transform.position, entrance.OutsidePoint, NavMesh.AllAreas, navMeshPath))
-        {
-          float distance = NavMeshExtensions.CalculatePathDistance(navMeshPath);
-
-          if (distance < minDistance)
-          {
-            minDistance = distance;
-            closestEntrance = entrance;
-          }
-        }
-      }
-      
-      return closestEntrance;
-    }
-    
-    private Transform FindClosestSpawnPoint()
-    {
-      Transform closestSpawnPoint = null;
-      float minDistance = Mathf.Infinity;
-
-      for (int spawnPointIndex = 0; spawnPointIndex < EnemySpawnPointsContainer.Instance.Length; spawnPointIndex++)
-      {
-        NavMeshPath navMeshPath = new NavMeshPath();
-        Transform spawnPoint = EnemySpawnPointsContainer.Instance[spawnPointIndex];
-    
-        if (NavMesh.CalculatePath(transform.position, spawnPoint.position, NavMesh.AllAreas, navMeshPath))
-        {
-          float distance = NavMeshExtensions.CalculatePathDistance(navMeshPath);
-    
-          if (distance < minDistance)
-          {
-            minDistance = distance;
-            closestSpawnPoint = spawnPoint;
-          }
-        }
-      }
-    
-      return closestSpawnPoint;
-    }
 
 #if UNITY_EDITOR
     private void OnValidate()

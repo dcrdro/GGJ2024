@@ -1,8 +1,6 @@
-﻿using Core;
-using Extensions;
+﻿using Extensions;
 using JewelLogic;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace EnemyLogic.StateMachine.States
 {
@@ -39,41 +37,14 @@ namespace EnemyLogic.StateMachine.States
 
     private void FindTarget()
     {
-      _currentJewel = FindClosestJewel();
+      _currentJewel = NavMeshExtensions.FindClosestJewel(transform.position);
       
       _movement.ToggleMovement(true);
       _movement.SetTarget(_currentJewel.Position);
     }
 
-    private void OnReachedJewel()
-    {
+    private void OnReachedJewel() => 
       _stateMachine.Enter<JewelPickUpState, Jewel>(_currentJewel);
-    }
-
-    private Jewel FindClosestJewel()
-    {
-      Jewel closestJewel = null;
-      float minDistance = Mathf.Infinity;
-
-      for (int jewelIndex = 0; jewelIndex < JewelsContainer.Instance.Length; jewelIndex++)
-      {
-        NavMeshPath navMeshPath = new NavMeshPath();
-        Jewel jewel = JewelsContainer.Instance[jewelIndex];
-
-        if (NavMesh.CalculatePath(transform.position, jewel.Position, NavMesh.AllAreas, navMeshPath))
-        {
-          float distance = NavMeshExtensions.CalculatePathDistance(navMeshPath);
-
-          if (distance < minDistance)
-          {
-            minDistance = distance;
-            closestJewel = jewel;
-          }
-        }
-      }
-
-      return closestJewel;
-    }
 
 #if UNITY_EDITOR
     private void OnValidate()

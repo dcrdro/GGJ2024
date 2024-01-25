@@ -1,8 +1,6 @@
-﻿using Core;
-using Extensions;
+﻿using Extensions;
 using HouseLogic.Entrances;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace EnemyLogic.StateMachine.States
 {
@@ -22,7 +20,7 @@ namespace EnemyLogic.StateMachine.States
     
     public void Enter()
     {
-      _targetEntrance = FindClosestEntrance();
+      _targetEntrance = NavMeshExtensions.FindClosestEntrance(transform.position);
       
       _movement.SetTarget(_targetEntrance.OutsidePoint);
       _movement.ToggleMovement(true);
@@ -40,29 +38,6 @@ namespace EnemyLogic.StateMachine.States
 
     private void OnEntranceReached() => 
       _stateMachine.Enter<EntranceUnlockingState, EntranceBase>(_targetEntrance);
-
-    private EntranceBase FindClosestEntrance()
-    {
-      EntranceBase closestEntrance = null;
-      float minDistance = Mathf.Infinity;
-
-      foreach (EntranceBase entrance in HouseEntrancesContainer.Instance.Entrances)
-      {
-        NavMeshPath navMeshPath = new NavMeshPath();
-        if (NavMesh.CalculatePath(transform.position, entrance.OutsidePoint, NavMesh.AllAreas, navMeshPath))
-        {
-          float distance = NavMeshExtensions.CalculatePathDistance(navMeshPath);
-
-          if (distance < minDistance)
-          {
-            minDistance = distance;
-            closestEntrance = entrance;
-          }
-        }
-      }
-      
-      return closestEntrance;
-    }
 
 #if UNITY_EDITOR
     private void OnValidate()
