@@ -23,7 +23,7 @@ namespace HouseLogic.Entrances
     #region Properties
 
     public Vector3 OutsidePoint => _outsidePoint.position;
-    public Transform InsidePoint => _insidePoint;
+    public Vector3 InsidePoint => _insidePoint.position;
 
     public bool IsAlreadyUnlocking => _isAlreadyUnlocking;
     public bool IsUnlocked => _isUnlocked;

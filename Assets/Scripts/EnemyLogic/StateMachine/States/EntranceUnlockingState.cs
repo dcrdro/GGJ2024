@@ -70,7 +70,7 @@ namespace EnemyLogic.StateMachine.States
     private void MoveToNextState()
     {
       if(_entrance is Window)
-        _stateMachine.Enter<WindowEnteringState, Window>(_entrance as Window);
+        _stateMachine.Enter<WindowEnteringState, Window, bool>(_entrance as Window, false);
       else
         _stateMachine.Enter<MoveToJewelState>();
     }
