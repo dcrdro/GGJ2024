@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace EnemyLogic.StateMachine.States
 {
-  public class EntranceUnlockingState : ExitableStateBase, IPayloadedState<EntranceBase>
+  public class WindowEnteringState : ExitableStateBase, IPayloadedState<Window>
   {
     [SerializeField]
-    private float  _unlockingTime;
+    private float _windowEnteringDelay;
     
     [SerializeField, HideInInspector]
     private EnemyStateMachine _stateMachine;
@@ -17,7 +17,7 @@ namespace EnemyLogic.StateMachine.States
 
     [SerializeField, HideInInspector]
     private EnemyInterface _interface;
-
+    
     #region Properties
 
     private ActionProgressBar ActionProgressBar => _interface.ActionProgressBar;
@@ -26,53 +26,38 @@ namespace EnemyLogic.StateMachine.States
     
     #region Fields
 
-    private EntranceBase _entrance;
+    private Window _window;
 
     #endregion
 
-    public void Enter(EntranceBase entrance)
+    public void Enter(Window window)
     {
-      _entrance = entrance;
+      _window = window;
       
-      if (entrance.IsUnlocked)
-      {
-        MoveToNextState();
-        return;
-      }
+      _timer.Play(_windowEnteringDelay, OnWindowEnteringActionComplete, UpdateWindowEnteringProgress);
       
-      entrance.StartUnlocking();
-      _timer.Play(_unlockingTime, OnUnlockingActionComplete, UpdateUnlockingProgress);
-
-      UpdateUnlockingProgress();
-      _interface.ActionProgressBar.Toggle(true);
+      UpdateWindowEnteringProgress();
+      ActionProgressBar.Toggle(true);
     }
 
     public override void Exit()
     {
       base.Exit();
       
-      _timer.Stop();
       ActionProgressBar.Toggle(false);
+      _timer.Stop();
     }
 
-    private void OnUnlockingActionComplete()
+    private void OnWindowEnteringActionComplete()
     {
-      _entrance.Unlock();
-      MoveToNextState();
+      transform.position = _window.EnteringPoint.position;
+      _stateMachine.Enter<MoveToJewelState>();
     }
 
-    private void UpdateUnlockingProgress()
+    private void UpdateWindowEnteringProgress()
     {
       float percentage = _timer.CurrentTime / _timer.TargetTime;
       ActionProgressBar.SetValue(percentage);
-    }
-
-    private void MoveToNextState()
-    {
-      if(_entrance is Window)
-        _stateMachine.Enter<WindowEnteringState, Window>(_entrance as Window);
-      else
-        _stateMachine.Enter<MoveToJewelState>();
     }
 
 #if UNITY_EDITOR
