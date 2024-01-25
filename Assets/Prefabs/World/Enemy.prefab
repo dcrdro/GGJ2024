@@ -363,7 +363,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc37f4d4bcab4f99a9a73fe343a51b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unlockingTime: 4
   _stateMachine: {fileID: 3262915218373932634}
+  _timer: {fileID: 2134264192252147991}
+  _interface: {fileID: 6322163522229508536}
 --- !u!114 &6322163522229508536
 MonoBehaviour:
   m_ObjectHideFlags: 0
