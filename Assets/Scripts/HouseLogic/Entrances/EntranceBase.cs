@@ -10,7 +10,10 @@ namespace HouseLogic.Entrances
 
     [SerializeField]
     private Transform _outsidePoint;
-    
+
+    [SerializeField]
+    private Transform _insidePoint;
+
     #region Actions
 
     public event Action OnUnlocked;
@@ -20,6 +23,7 @@ namespace HouseLogic.Entrances
     #region Properties
 
     public Vector3 OutsidePoint => _outsidePoint.position;
+    public Transform InsidePoint => _insidePoint;
 
     public bool IsAlreadyUnlocking => _isAlreadyUnlocking;
     public bool IsUnlocked => _isUnlocked;

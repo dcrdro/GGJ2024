@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _body: {fileID: 7376990224480540441}
-  _outsidePoint: {fileID: 0}
-  _enteringPoint: {fileID: 6717901469590072956}
+  _outsidePoint: {fileID: 1863828860523954882}
+  _insidePoint: {fileID: 6717901469590072956}
 --- !u!1 &7376990224480540441
 GameObject:
   m_ObjectHideFlags: 0
