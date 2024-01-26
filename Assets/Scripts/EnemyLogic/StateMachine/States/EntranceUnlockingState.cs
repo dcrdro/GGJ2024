@@ -8,7 +8,10 @@ namespace EnemyLogic.StateMachine.States
   {
     [SerializeField]
     private float  _unlockingTime;
-    
+
+    [SerializeField, HideInInspector]
+    private EnemyAnimator _animator;
+
     [SerializeField, HideInInspector]
     private EnemyStateMachine _stateMachine;
 
@@ -50,6 +53,9 @@ namespace EnemyLogic.StateMachine.States
 
       UpdateUnlockingProgress();
       _interface.ActionProgressBar.Toggle(true);
+      
+      _animator.LockAction(true);
+      _animator.PlayCrashing();
     }
 
     public override void Exit()
@@ -58,6 +64,7 @@ namespace EnemyLogic.StateMachine.States
       
       _timer.Stop();
       ActionProgressBar.Toggle(false);
+      _animator.LockAction(false);
     }
 
     private void OnUnlockingActionComplete()
@@ -83,6 +90,9 @@ namespace EnemyLogic.StateMachine.States
 
       if (_interface == null)
         TryGetComponent(out _interface);
+
+      if (_animator == null)
+        TryGetComponent(out _animator);
     }
 #endif
   }

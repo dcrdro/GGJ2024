@@ -1,5 +1,5 @@
 ﻿using JewelLogic;
-using System.Collections;
+using EnemyLogic.StateMachine;
 using UnityEngine;
 
 public class EnemySharedState : MonoBehaviour

@@ -15,6 +15,9 @@ namespace EnemyLogic.StateMachine.States
     private EnemyInterface _interface;
 
     [SerializeField, HideInInspector]
+    private EnemyAnimator _animator;
+
+    [SerializeField, HideInInspector]
     private EnemyStateMachine _stateMachine;
 
     [SerializeField, HideInInspector]
@@ -33,6 +36,9 @@ namespace EnemyLogic.StateMachine.States
 
       _timer.Play(_jewelPickingUpDelay, PickUpJewel, UpdateProgressBar);
 
+      float pickUpSpeed = 2.046f / _jewelPickingUpDelay;
+      _animator.PlayPickUp(pickUpSpeed);
+      
       UpdateProgressBar();
       _interface.ActionProgressBar.Toggle(true);
     }
@@ -68,6 +74,9 @@ namespace EnemyLogic.StateMachine.States
 
       if (_interface == null)
         TryGetComponent(out _interface);
+
+      if (_animator == null)
+        TryGetComponent(out _animator);
     }
 #endif
   }

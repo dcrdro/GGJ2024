@@ -10,6 +10,9 @@ namespace EnemyLogic
     [SerializeField, HideInInspector]
     private NavMeshAgent _agent;
 
+    [SerializeField, HideInInspector]
+    private EnemyAnimator _animator;
+
     #region Actions
 
     public event Action OnTargetReached; 
@@ -21,6 +24,8 @@ namespace EnemyLogic
 
     public void ToggleMovement(bool state)
     {
+      _animator.ToggleMovement(state);
+      
       if(enabled == state)
         return;
       
@@ -39,6 +44,9 @@ namespace EnemyLogic
     {
       if (_agent == null)
         TryGetComponent(out _agent);
+
+      if (_animator == null)
+        TryGetComponent(out _animator);
     }
 #endif
   }
