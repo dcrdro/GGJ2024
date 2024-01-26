@@ -1685,12 +1685,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4900033346518754955, guid: bafd274955b480648a9bd8c11bbc6abd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4900033346518754955, guid: bafd274955b480648a9bd8c11bbc6abd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.3
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 70.932
       objectReference: {fileID: 0}
     - target: {fileID: 4900033346518754956, guid: bafd274955b480648a9bd8c11bbc6abd, type: 3}
       propertyPath: m_CullingMask.m_Bits

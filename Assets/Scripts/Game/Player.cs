@@ -15,6 +15,8 @@ public class Player: MonoBehaviour
 
     private Quaternion trot;
 
+    public Camera camera;
+
     void Update()
     { 
         float horizontalInput = Input.GetAxis("Horizontal");
