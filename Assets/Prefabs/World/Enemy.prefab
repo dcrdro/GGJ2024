@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 3011858816756674128}
   - component: {fileID: 3374629501955595367}
   - component: {fileID: 5138078052838503034}
+  - component: {fileID: 7808270959362671812}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -355,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cde537ab9b845c4a1ecac4ed7f793b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SharedState: {fileID: 5331118922223409990}
+  SharedState: {fileID: 7808270959362671812}
   _jewelPickingUpDelay: 2
   _interface: {fileID: 6322163522229508536}
   _stateMachine: {fileID: 3262915218373932634}
@@ -474,6 +475,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movement: {fileID: 2926194461631672457}
   _stateMachine: {fileID: 3262915218373932634}
+--- !u!114 &7808270959362671812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673837704981324681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fdc6f1def517941967a0222c320e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapCamera: {fileID: 8602319962167368926}
 --- !u!1 &3901637624486331146
 GameObject:
   m_ObjectHideFlags: 0
