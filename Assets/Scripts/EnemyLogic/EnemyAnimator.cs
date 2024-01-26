@@ -16,5 +16,11 @@ namespace EnemyLogic
     {
       _animator.SetTrigger("CrashingTrigger");
     }
+
+    public void PlayPickUp(float pickUpSpeed)
+    {
+      _animator.SetFloat("PickUpSpeed", pickUpSpeed);
+      _animator.SetTrigger("PickUpTrigger");
+    }
   }
 }
