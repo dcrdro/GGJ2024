@@ -16,17 +16,17 @@ public class Inventory : MonoBehaviour
     public event Action<Item> Updated;
     public event Action<Item> Removed;
 
-    public void Add(ResourceType type)
+    public void Add(ResourceType type, int count)
     {
         var item = items.Find(x => x.type == type);
         if (item != null)
         {
-            item.count++;
+            item.count += count;
             Updated?.Invoke(item);
         }
         else
         {
-            item = new Item() { type = type };
+            item = new Item() { type = type, count = count };
             items.Add(item);
             Added?.Invoke(item);
         }
