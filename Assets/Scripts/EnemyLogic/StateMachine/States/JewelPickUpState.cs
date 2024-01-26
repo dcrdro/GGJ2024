@@ -29,7 +29,7 @@ namespace EnemyLogic.StateMachine.States
     public void Enter(Jewel jewel)
     {
       _jewel = jewel;
-      // SharedState.Jewel = jewel;
+      SharedState.Jewel = jewel;
 
       _timer.Play(_jewelPickingUpDelay, PickUpJewel, UpdateProgressBar);
 
