@@ -16,7 +16,7 @@ public class Trap : MonoBehaviour
             // catch
             // implement enemy logic
 
-            Debug.Log("trap");
+            FindObjectOfType<AudioManager>().PlayTrapCatch();
 
             enemy.Jewel?.Drop();
             enemy.Jewel = null;

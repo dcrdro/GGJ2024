@@ -13,6 +13,7 @@ public class Resoure : MonoBehaviour
     {
         if (other.TryGetComponent<Player>(out var inv))
         {
+            FindObjectOfType<AudioManager>().PlayResource();
             Collected?.Invoke();
             FindObjectOfType<Inventory>().Add(resourceType, Count);
             Destroy(gameObject);
