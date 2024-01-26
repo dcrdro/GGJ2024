@@ -39,7 +39,7 @@ public class InventoryUI : MonoBehaviour
     private void Inventory_Added(Item item)
     {
         var data = resourcesDatabase[item.type];
-        var ui = Instantiate(itemPrefab, transform);
+        var ui = Instantiate(itemPrefab, transform.GetChild(0));
         ui.Type = item.type;
         ui.SetCount(item.count);
         ui.SetTitle(data.name);

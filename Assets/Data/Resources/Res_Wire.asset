@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba283ab13183dd440938c8f20468ed77, type: 3}
-  m_Name: _Resource_1
+  m_Name: Res_Wire
   m_EditorClassIdentifier: 
-  name: Res 1
-  resourceType: 0
-  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  name: Wire
+  resourceType: 5
+  icon: {fileID: 21300000, guid: 32902e34fb3108d4eb73a84283182524, type: 3}
   prefab: {fileID: 3582123322955395073, guid: fe3a065fe5948604d98759f5a012c98e, type: 3}
