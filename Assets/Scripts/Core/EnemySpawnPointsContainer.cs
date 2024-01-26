@@ -14,6 +14,9 @@ namespace Core
     public Transform this[int index] => _spawnPoints[index];
     public int Length => _spawnPoints.Length;
 
+
+    public int EscapedCount { get; set; }
+
     #endregion
 
     private void Awake() => 

@@ -39,7 +39,7 @@ namespace JewelLogic
       gameObject.SetActive(false);
       transform.parent = target;
       
-      JewelsContainer.Instance.Remove(this);
+      JewelsContainer.Instance.Remove(this); // need to do this only after enemies escaping
       OnPickedUp?.Invoke();
     }
 

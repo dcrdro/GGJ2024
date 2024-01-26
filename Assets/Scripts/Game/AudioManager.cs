@@ -9,12 +9,13 @@ public class AudioManager : MonoBehaviour
     public AudioClip trapPlace;
     public AudioClip trapCatch;
     public AudioClip win;
+    public AudioClip lose;
 
     public void PlayResource() => PlayAudio(resource);
     public void PlayTrapPlace() => PlayAudio(trapPlace);
     public void PlayTrapCatch() => PlayAudio(trapCatch);
     public void PlayWin() => PlayAudio(win);
+    public void PlayLose() => PlayAudio(lose);
 
     public void PlayAudio(AudioClip clip, float volume = 1) => soundSource.PlayOneShot(clip, volume);
-
 }

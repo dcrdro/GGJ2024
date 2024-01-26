@@ -28,8 +28,11 @@ namespace EnemyLogic.StateMachine.States
       _movement.OnTargetReached -= OnReachedTarget;
     }
 
-    private void OnReachedTarget() => 
-      Destroy(gameObject);
+    private void OnReachedTarget()
+        {
+            Destroy(gameObject);
+            EnemySpawnPointsContainer.Instance.EscapedCount++;
+        }
 
     private Transform FindClosestSpawnPoint()
     {
