@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace EnemyLogic
@@ -8,6 +9,7 @@ namespace EnemyLogic
     #region Properties
 
     public float TargetTime => _time;
+        public float NormalizedTime => CurrentTime / TargetTime;
     public float CurrentTime
     {
       get => _currentTime;

@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Res 1
   resourceType: 0
   icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  prefab: {fileID: 3582123322955395073, guid: fe3a065fe5948604d98759f5a012c98e, type: 3}
