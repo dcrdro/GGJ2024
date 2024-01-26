@@ -26,13 +26,6 @@ namespace JewelLogic
             initPosition = transform.position;
         }
 
-        public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                Drop();
-            }
-        }
 
         public void Drop()
         {
