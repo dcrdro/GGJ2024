@@ -1,5 +1,5 @@
-﻿using JewelLogic;
-using System.Collections;
+﻿using EnemyLogic.StateMachine;
+using EnemyLogic.StateMachine.States;
 using UnityEngine;
 
 public class Trap : MonoBehaviour
@@ -9,29 +9,11 @@ public class Trap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // rework on type
-        var enemy = other.GetComponentInParent<EnemySharedState>();
-        if (enemy != null)
+        if (other.transform.parent.TryGetComponent(out EnemyStateMachine stateMachine))
         {
-            // catch
-            // implement enemy logic
-
-            FindObjectOfType<AudioManager>().PlayTrapCatch();
-
-            enemy.Jewel?.Drop();
-            enemy.Jewel = null;
-            enemy.StartCoroutine(ShowCamera(enemy));
+            // FindObjectOfType<AudioManager>().PlayTrapCatch();
+            stateMachine.Enter<FireTrapState>();
             Destroy(gameObject);
         }
-    }
-
-    // todo : do in separate enemy state
-    private IEnumerator ShowCamera(EnemySharedState state)
-    {
-        FindObjectOfType<UIManager>().trapRender.SetActive(true);
-        state.TrapCamera.enabled = true;
-        yield return new WaitForSeconds(animationTime);
-        state.TrapCamera.enabled = false;
-        FindObjectOfType<UIManager>().trapRender.SetActive(false);
     }
 }

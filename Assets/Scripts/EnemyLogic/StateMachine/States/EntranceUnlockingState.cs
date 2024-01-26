@@ -53,6 +53,8 @@ namespace EnemyLogic.StateMachine.States
 
       UpdateUnlockingProgress();
       _interface.ActionProgressBar.Toggle(true);
+      
+      _animator.LockAction(true);
       _animator.PlayCrashing();
     }
 
@@ -62,6 +64,7 @@ namespace EnemyLogic.StateMachine.States
       
       _timer.Stop();
       ActionProgressBar.Toggle(false);
+      _animator.LockAction(false);
     }
 
     private void OnUnlockingActionComplete()
