@@ -13,6 +13,7 @@ public class TrapManagerUI : MonoBehaviour
         var ui = Instantiate(trapButtonUIPrefab, transform);
         
         ui.SetTitle(trapData.name);
+        ui.SetIcon(trapData.icon);
         ui.Type = trapData.trapType;
         ui.SetRequirements(trapData.requiredResources, resourcesDatabase);
         ui.Used += OnUsed;

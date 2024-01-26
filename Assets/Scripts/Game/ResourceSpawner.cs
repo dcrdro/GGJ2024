@@ -30,7 +30,9 @@ public class ResourceSpawner : MonoBehaviour
             var data = resourcesDatabase[ResourceType];
             if (resource == null)
             {
+                Debug.Log("spawn: " + data.resourceType, this);
                 resource = Instantiate(data.prefab, transform.position, Quaternion.identity);
+                resource.resourceType = ResourceType;
                 resource.Collected += () =>
                 {
                     countText.text = $"x0";

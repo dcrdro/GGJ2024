@@ -1,5 +1,9 @@
 ﻿public enum ResourceType
 {
     _Test1,
-    _Test2,
+    Banana,
+    Petrol,
+    IceCream,
+    Rope,
+    Wire
 }

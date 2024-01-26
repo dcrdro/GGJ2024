@@ -66,8 +66,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 3070312247460504641}
   title: {fileID: 1864276475836363540}
+  icon: {fileID: 6570242604824282651}
   itemUIPrefab: {fileID: 3390823991715886865, guid: af3f0248caf3a1b47bada194dda7536e, type: 3}
   reqsHolder: {fileID: 4919793448626354841}
 --- !u!1 &8452205630362476193

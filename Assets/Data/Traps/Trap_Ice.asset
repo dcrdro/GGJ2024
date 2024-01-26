@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77d4e494480ab854e82a3454d171eb54, type: 3}
-  m_Name: _TrapItem2
+  m_Name: Trap_Ice
   m_EditorClassIdentifier: 
-  name: Trap 2
-  trapType: 1
+  name: Ice Trap
+  trapType: 2
   requiredResources:
-  - type: 0
+  - type: 3
     count: 2
-  - type: 1
-    count: 1
-  icon: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  - type: 4
+    count: 2
+  icon: {fileID: 21300000, guid: f35d81814ad5e8549bd2e75a0e1f55ba, type: 3}
   prefab: {fileID: 4521017411786638154, guid: e1c593b795efddb4a80a577c683028b8, type: 3}
