@@ -15,15 +15,47 @@ namespace JewelLogic
     #region Properties
 
     public Vector3 Position => transform.position;
+    public bool IsDropped { get; private set; }
 
-    #endregion
+        #endregion
 
-    public void PickUp()
+        private Vector3 initPosition;
+
+        private void Awake()
+        {
+            initPosition = transform.position;
+        }
+
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Drop();
+            }
+        }
+
+        public void Drop()
+        {
+            gameObject.SetActive(true);
+            transform.parent = null;
+            IsDropped = true;
+        }
+
+        public void PickUp(Transform target)
     {
       gameObject.SetActive(false);
+      transform.parent = target;
       
       JewelsContainer.Instance.Remove(this);
       OnPickedUp?.Invoke();
     }
-  }
+
+        public void Return()
+        {
+            gameObject.SetActive(true);
+            transform.parent = null;
+            transform.position = initPosition;
+            IsDropped = false;
+        }
+    }
 }

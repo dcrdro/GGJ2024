@@ -8,9 +8,13 @@ public class Trap : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // rework on type
-        if (other.name.Contains("Enemy"))
+        if (other.TryGetComponent<EnemySharedState>(out var state))
         {
             // catch
+            // implement enemy logic
+
+            state.Jewel.Drop();
+            state.Jewel = null; 
             Destroy(gameObject);
         }
     }
