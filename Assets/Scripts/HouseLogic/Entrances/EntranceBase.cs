@@ -50,6 +50,7 @@ namespace HouseLogic.Entrances
       OnUnlocked?.Invoke();
     }
 
+    [ContextMenu("Close")]
     public void Lock()
     {
       _body.SetActive(true);

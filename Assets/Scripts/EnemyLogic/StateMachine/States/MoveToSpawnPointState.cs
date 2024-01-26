@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EnemyLogic.StateMachine.States
 {
-  public class EscapeFromHouseState : ExitableStateBase, IState
+  public class MoveToSpawnPointState : ExitableStateBase, IState
   {
     [SerializeField, HideInInspector]
     private EnemyMovement _movement;

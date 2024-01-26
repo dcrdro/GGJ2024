@@ -49,7 +49,7 @@ namespace EnemyLogic.StateMachine.States
     private void PickUpJewel()
     {
       _jewel.PickUp(transform);
-      _stateMachine.Enter<EscapeFromHouseState>();
+      _stateMachine.Enter<MoveToHouseEntranceFromInsideState>();
     }
 
     private void UpdateProgressBar()

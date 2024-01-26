@@ -18,7 +18,7 @@ namespace Extensions
       return distance;
     }
     
-    public static EntranceBase FindClosestEntrance(Vector3 currentPosition)
+    public static EntranceBase FindClosestEntrance(Vector3 currentPosition, bool isOutside)
     {
       EntranceBase closestEntrance = null;
       float minDistance = Mathf.Infinity;
@@ -26,6 +26,8 @@ namespace Extensions
       foreach (EntranceBase entrance in HouseEntrancesContainer.Instance.Entrances)
       {
         NavMeshPath navMeshPath = new NavMeshPath();
+
+        Vector3 entrancePosition = isOutside ? entrance.OutsidePoint : entrance.InsidePoint;
         if (NavMesh.CalculatePath(currentPosition, entrance.OutsidePoint, NavMesh.AllAreas, navMeshPath))
         {
           float distance = CalculatePathDistance(navMeshPath);

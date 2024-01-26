@@ -55,7 +55,10 @@ namespace EnemyLogic.StateMachine.States
       Vector3 spawnPosition = _isEscaping ? _window.OutsidePoint : _window.InsidePoint;
       transform.position = spawnPosition;
       
-      _stateMachine.Enter<MoveToJewelState>();
+      if(_isEscaping)
+        _stateMachine.Enter<MoveToSpawnPointState>();
+      else
+        _stateMachine.Enter<MoveToJewelState>();
     }
 
     private void UpdateWindowEnteringProgress()
