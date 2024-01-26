@@ -6,7 +6,7 @@ namespace EnemyLogic.StateMachine.States
 {
   public class JewelPickUpState : ExitableStateBase, IPayloadedState<Jewel>
   {
-        public EnemySharedState SharedState;
+    public EnemySharedState SharedState;
 
     [SerializeField]
     private float _jewelPickingUpDelay;
@@ -29,11 +29,10 @@ namespace EnemyLogic.StateMachine.States
     public void Enter(Jewel jewel)
     {
       _jewel = jewel;
-            SharedState.Jewel = jewel;
+      // SharedState.Jewel = jewel;
 
-      
       _timer.Play(_jewelPickingUpDelay, PickUpJewel, UpdateProgressBar);
-      
+
       UpdateProgressBar();
       _interface.ActionProgressBar.Toggle(true);
     }
@@ -41,7 +40,7 @@ namespace EnemyLogic.StateMachine.States
     public override void Exit()
     {
       base.Exit();
-      
+
       _timer.Stop();
       _interface.ActionProgressBar.Toggle(false);
     }
@@ -49,7 +48,7 @@ namespace EnemyLogic.StateMachine.States
     private void PickUpJewel()
     {
       _jewel.PickUp(transform);
-      _stateMachine.Enter<EscapeFromHouseState>();
+      _stateMachine.Enter<MoveToHouseEntranceFromInsideState>();
     }
 
     private void UpdateProgressBar()

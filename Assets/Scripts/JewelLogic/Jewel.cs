@@ -11,44 +11,44 @@ namespace JewelLogic
     public event Action OnPickedUp;
 
     #endregion
-    
+
     #region Properties
 
     public Vector3 Position => transform.position;
+    
     public bool IsDropped { get; private set; }
 
-        #endregion
+    #endregion
 
-        private Vector3 initPosition;
+    private Vector3 initPosition;
 
-        private void Awake()
-        {
-            initPosition = transform.position;
-        }
+    private void Awake()
+    {
+      initPosition = transform.position;
+    }
 
+    public void Drop()
+    {
+      gameObject.SetActive(true);
+      transform.parent = null;
+      IsDropped = true;
+    }
 
-        public void Drop()
-        {
-            gameObject.SetActive(true);
-            transform.parent = null;
-            IsDropped = true;
-        }
-
-        public void PickUp(Transform target)
+    public void PickUp(Transform target)
     {
       gameObject.SetActive(false);
       transform.parent = target;
-      
-      JewelsContainer.Instance.Remove(this); // need to do this only after enemies escaping
+
+      JewelsContainer.Instance.Remove(this);
       OnPickedUp?.Invoke();
     }
 
-        public void Return()
-        {
-            gameObject.SetActive(true);
-            transform.parent = null;
-            transform.position = initPosition;
-            IsDropped = false;
-        }
+    public void Return()
+    {
+      gameObject.SetActive(true);
+      transform.parent = null;
+      transform.position = initPosition;
+      IsDropped = false;
     }
+  }
 }

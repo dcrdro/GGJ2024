@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace EnemyLogic.StateMachine.States
 {
-  public class WindowEnteringState : ExitableStateBase, IPayloadedState<Window>
+  public class WindowEnteringState : ExitableStateBase, IPayloadedState<Window, bool>
   {
     [SerializeField]
     private float _windowEnteringDelay;
@@ -27,11 +27,13 @@ namespace EnemyLogic.StateMachine.States
     #region Fields
 
     private Window _window;
+    private bool _isEscaping;
 
     #endregion
 
-    public void Enter(Window window)
+    public void Enter(Window window, bool isEscaping)
     {
+      _isEscaping = isEscaping;
       _window = window;
       
       _timer.Play(_windowEnteringDelay, OnWindowEnteringActionComplete, UpdateWindowEnteringProgress);
@@ -50,8 +52,13 @@ namespace EnemyLogic.StateMachine.States
 
     private void OnWindowEnteringActionComplete()
     {
-      transform.position = _window.EnteringPoint.position;
-      _stateMachine.Enter<MoveToJewelState>();
+      Vector3 spawnPosition = _isEscaping ? _window.OutsidePoint : _window.InsidePoint;
+      transform.position = spawnPosition;
+      
+      if(_isEscaping)
+        _stateMachine.Enter<MoveToSpawnPointState>();
+      else
+        _stateMachine.Enter<MoveToJewelState>();
     }
 
     private void UpdateWindowEnteringProgress()

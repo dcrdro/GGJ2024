@@ -1,10 +1,10 @@
 ﻿using Extensions;
-using JewelLogic;
+using HouseLogic.Entrances;
 using UnityEngine;
 
 namespace EnemyLogic.StateMachine.States
 {
-  public class MoveToJewelState : ExitableStateBase, IState
+  public class MoveToHouseExitState : ExitableStateBase, IState
   {
     [SerializeField, HideInInspector]
     private EnemyMovement _movement;
@@ -14,16 +14,18 @@ namespace EnemyLogic.StateMachine.States
 
     #region Fields
 
-    private Jewel _currentJewel;
+    private EntranceBase _targetEntrance;
 
     #endregion
     
     public void Enter()
     {
-      FindTarget();
-
-      _movement.OnTargetReached += OnReachedJewel;
-      _currentJewel.OnPickedUp += FindTarget;
+      _targetEntrance = NavMeshExtensions.FindClosestEntrance(transform.position, false);
+      
+      _movement.SetTarget(_targetEntrance.OutsidePoint);
+      _movement.ToggleMovement(true);
+      
+      _movement.OnTargetReached += OnEntranceReached;
     }
 
     public override void Exit()
@@ -31,20 +33,11 @@ namespace EnemyLogic.StateMachine.States
       base.Exit();
       
       _movement.ToggleMovement(false);
-      _movement.OnTargetReached -= OnReachedJewel;
-      _currentJewel.OnPickedUp -= FindTarget;
+      _movement.OnTargetReached -= OnEntranceReached;
     }
 
-    private void FindTarget()
-    {
-      _currentJewel = NavMeshExtensions.FindClosestJewel(transform.position);
-      
-      _movement.ToggleMovement(true);
-      _movement.SetTarget(_currentJewel.Position);
-    }
-
-    private void OnReachedJewel() => 
-      _stateMachine.Enter<JewelPickUpState, Jewel>(_currentJewel);
+    private void OnEntranceReached() => 
+      _stateMachine.Enter<EntranceUnlockingState, EntranceBase>(_targetEntrance);
 
 #if UNITY_EDITOR
     private void OnValidate()

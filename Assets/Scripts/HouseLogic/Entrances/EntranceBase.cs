@@ -9,8 +9,11 @@ namespace HouseLogic.Entrances
     private GameObject _body;
 
     [SerializeField]
-    private Transform _unlockingPoint;
-    
+    private Transform _outsidePoint;
+
+    [SerializeField]
+    private Transform _insidePoint;
+
     #region Actions
 
     public event Action OnUnlocked;
@@ -19,7 +22,8 @@ namespace HouseLogic.Entrances
     
     #region Properties
 
-    public Vector3 Position => _unlockingPoint.position;
+    public Vector3 OutsidePoint => _outsidePoint.position;
+    public Vector3 InsidePoint => _insidePoint.position;
 
     public bool IsAlreadyUnlocking => _isAlreadyUnlocking;
     public bool IsUnlocked => _isUnlocked;
@@ -46,6 +50,7 @@ namespace HouseLogic.Entrances
       OnUnlocked?.Invoke();
     }
 
+    [ContextMenu("Close")]
     public void Lock()
     {
       _body.SetActive(true);

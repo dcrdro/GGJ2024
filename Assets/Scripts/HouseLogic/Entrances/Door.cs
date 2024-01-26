@@ -1,7 +1,4 @@
 ﻿namespace HouseLogic.Entrances
 {
-  public class Door : EntranceBase
-  {
-    
-  }
+  public class Door : EntranceBase { }
 }

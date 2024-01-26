@@ -24,7 +24,7 @@ namespace EnemyLogic.StateMachine
       foreach (ExitableStateBase state in _notBakedStates) 
         AddState(state.GetType(), state);
       
-      Enter<MoveToHouseEntranceState>();
+      Enter<MoveToHouseEntranceFromOutsideState>();
     }
 
     private void OnDestroy() => 
@@ -43,6 +43,12 @@ namespace EnemyLogic.StateMachine
     {
       TState state = ChangeState<TState>();
       state.Enter(payload);
+    }
+    
+    public void Enter<TState, TPayload, FPayload>(TPayload payload, FPayload payload1) where TState : class, IPayloadedState<TPayload, FPayload>
+    {
+      TState state = ChangeState<TState>();
+      state.Enter(payload, payload1);
     }
 
     private TState ChangeState<TState>() where TState : class, IExitableState

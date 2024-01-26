@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace EnemyLogic.StateMachine.States
 {
-  public class EntranceUnlockingState : ExitableStateBase, IPayloadedState<EntranceBase>
+  public abstract class EntranceUnlockingState : ExitableStateBase, IPayloadedState<EntranceBase>
   {
     [SerializeField]
     private float  _unlockingTime;
@@ -20,6 +20,9 @@ namespace EnemyLogic.StateMachine.States
 
     #region Properties
 
+    protected EnemyStateMachine StateMachine => _stateMachine;
+    protected EntranceBase Entrance => _entrance;
+    
     private ActionProgressBar ActionProgressBar => _interface.ActionProgressBar;
 
     #endregion
@@ -30,6 +33,8 @@ namespace EnemyLogic.StateMachine.States
 
     #endregion
 
+    protected abstract void MoveToNextState();
+    
     public void Enter(EntranceBase entrance)
     {
       _entrance = entrance;
@@ -65,14 +70,6 @@ namespace EnemyLogic.StateMachine.States
     {
       float percentage = _timer.CurrentTime / _timer.TargetTime;
       ActionProgressBar.SetValue(percentage);
-    }
-
-    private void MoveToNextState()
-    {
-      if(_entrance is Window)
-        _stateMachine.Enter<WindowEnteringState, Window>(_entrance as Window);
-      else
-        _stateMachine.Enter<MoveToJewelState>();
     }
 
 #if UNITY_EDITOR
