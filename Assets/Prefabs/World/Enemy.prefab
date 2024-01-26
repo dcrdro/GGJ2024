@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 1913047225745148263}
   - component: {fileID: 6555662622430538523}
   - component: {fileID: 6869992995998416991}
+  - component: {fileID: -474063423543271544}
   - component: {fileID: 1940979715295732249}
   - component: {fileID: 6322163522229508536}
   - component: {fileID: 2134264192252147991}
@@ -294,6 +295,7 @@ MonoBehaviour:
   - {fileID: 6555662622430538523}
   - {fileID: 6869992995998416991}
   - {fileID: 1940979715295732249}
+  - {fileID: -474063423543271544}
 --- !u!114 &9152942155245302545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +353,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movement: {fileID: 2926194461631672457}
   _stateMachine: {fileID: 3262915218373932634}
+--- !u!114 &-474063423543271544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673837704981324681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1f9425743b4344800b55c0cbe24864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _windowEnteringDelay: 2
+  _stateMachine: {fileID: 3262915218373932634}
+  _timer: {fileID: 2134264192252147991}
+  _interface: {fileID: 6322163522229508536}
 --- !u!114 &1940979715295732249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc37f4d4bcab4f99a9a73fe343a51b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unlockingTime: 4
   _stateMachine: {fileID: 3262915218373932634}
+  _timer: {fileID: 2134264192252147991}
+  _interface: {fileID: 6322163522229508536}
 --- !u!114 &6322163522229508536
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ namespace HouseLogic.Entrances
   {
     [SerializeField]
     private GameObject _body;
+
+    [SerializeField]
+    private Transform _unlockingPoint;
     
     #region Actions
 
@@ -16,7 +19,7 @@ namespace HouseLogic.Entrances
     
     #region Properties
 
-    public Vector3 Position => transform.position;
+    public Vector3 Position => _unlockingPoint.position;
 
     public bool IsAlreadyUnlocking => _isAlreadyUnlocking;
     public bool IsUnlocked => _isUnlocked;
