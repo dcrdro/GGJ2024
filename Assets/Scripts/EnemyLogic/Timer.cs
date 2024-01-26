@@ -63,7 +63,7 @@ namespace EnemyLogic
         _onComplete?.Invoke();
     }
 
-    private bool IsTimeExceeded() => 
+    public bool IsTimeExceeded() => 
       CurrentTime >= _time;
   }
 }
