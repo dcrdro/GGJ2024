@@ -1519,7 +1519,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5168413010315402102, guid: 86d596a7aa0d2784c8556d0744129b61, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3454005944063947650}
+      addedObject: {fileID: 8293550280064877645}
   m_SourcePrefab: {fileID: 100100000, guid: 86d596a7aa0d2784c8556d0744129b61, type: 3}
 --- !u!4 &8636453987124097859 stripped
 Transform:
@@ -1536,21 +1536,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5168413010315402102, guid: 86d596a7aa0d2784c8556d0744129b61, type: 3}
   m_PrefabInstance: {fileID: 3486697724463736880}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3454005944063947650
+--- !u!114 &8293550280064877645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8636453987124097862}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef7a35c81e74fd74a9ba10209a6f16f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5eb532b86ef5bae4fb4f0c7c602f6389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 8636453987124097860}
   target: {fileID: 9039174437738075094}
-  offset: {x: 0, y: 0, z: 0}
+  maxDist: {x: 12, y: 0, z: 5}
+  maxOffset: 1
 --- !u!1001 &3532069336758122357
 PrefabInstance:
   m_ObjectHideFlags: 0
