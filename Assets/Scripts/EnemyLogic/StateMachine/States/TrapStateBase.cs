@@ -23,9 +23,13 @@ namespace EnemyLogic.StateMachine.States
     [SerializeField, HideInInspector]
     protected EnemyStateMachine _stateMachine;
 
-    #region Fields
+        public float soundDelay;
+        public AudioClip clip;
 
-    protected Coroutine _coroutine;
+
+        #region Fields
+
+        protected Coroutine _coroutine;
 
     #endregion
 
@@ -38,17 +42,27 @@ namespace EnemyLogic.StateMachine.States
       DropJewel();
 
       _timer.Play(_stanDuration, TrapHasExpired);
-      //_coroutine = StartCoroutine(ShowCamera());
-    }
+            StartCoroutine(Wait(soundDelay));
 
-    protected abstract void OnTrapStart();
+            //_coroutine = StartCoroutine(ShowCamera());
+        }
+
+
+        IEnumerator Wait(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            FindFirstObjectByType<AudioManager>().PlayAudio(clip, 1, true);
+
+        }
+        protected abstract void OnTrapStart();
     protected abstract void OnTrapEnd();
 
     private void DropJewel()
     {
       Vector3 offs = Random.insideUnitCircle.normalized;
       offs = new Vector3(offs.x, 0, offs.y);
-      var pos = transform.position + offs * 1.5f;
+
+            var pos = transform.position + offs * 1.5f;
       _sharedState.Jewel?.Drop(pos);
       _sharedState.Jewel = null;
       _jewelObject.SetActive(false);
@@ -66,8 +80,9 @@ namespace EnemyLogic.StateMachine.States
 
       Camera sharedStateTrapCamera = _sharedState.TrapCamera;
       GameObject trapRender = FindObjectOfType<UIManager>().trapRender;
+            FindFirstObjectByType<AudioManager>().Stop();
 
-      sharedStateTrapCamera.enabled = false;
+            sharedStateTrapCamera.enabled = false;
       trapRender.SetActive(false);
     }
 

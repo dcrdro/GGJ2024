@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
@@ -17,5 +18,20 @@ public class AudioManager : MonoBehaviour
     public void PlayWin() => PlayAudio(win);
     public void PlayLose() => PlayAudio(lose);
 
-    public void PlayAudio(AudioClip clip, float volume = 1) => soundSource.PlayOneShot(clip, volume);
+    public void PlayAudio(AudioClip clip, float volume = 1, bool onSource = false)
+    {
+        if (onSource)
+        {
+            soundSource.clip = clip;
+            soundSource.volume = volume;
+            soundSource.Play();
+
+        }
+        else
+        {
+            soundSource.PlayOneShot(clip, volume);
+        }
+    }
+
+    public void Stop() => soundSource.Stop();
 }

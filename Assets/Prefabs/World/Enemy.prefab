@@ -400,6 +400,8 @@ MonoBehaviour:
   _timer: {fileID: 2134264192252147991}
   _sharedState: {fileID: 7808270959362671812}
   _stateMachine: {fileID: 3262915218373932634}
+  soundDelay: 0
+  clip: {fileID: 8300000, guid: fdba7f7f79de7ca499f20605b9eab78f, type: 3}
   _fireEffectObject: {fileID: 1559830111805278716}
 --- !u!114 &802675689621594557
 MonoBehaviour:
@@ -419,6 +421,8 @@ MonoBehaviour:
   _timer: {fileID: 2134264192252147991}
   _sharedState: {fileID: 7808270959362671812}
   _stateMachine: {fileID: 3262915218373932634}
+  soundDelay: 0
+  clip: {fileID: 8300000, guid: c4ea999a994d3aa45a83585972baf45d, type: 3}
   _ice: {fileID: 1567489798074738273}
 --- !u!114 &4310890564581279504
 MonoBehaviour:
@@ -438,6 +442,8 @@ MonoBehaviour:
   _timer: {fileID: 2134264192252147991}
   _sharedState: {fileID: 7808270959362671812}
   _stateMachine: {fileID: 3262915218373932634}
+  soundDelay: 0.5
+  clip: {fileID: 8300000, guid: 49987745770431e40ac1345727ed3261, type: 3}
   cage: {fileID: 8552359115310087650}
 --- !u!1 &3461803785257460982
 GameObject:
