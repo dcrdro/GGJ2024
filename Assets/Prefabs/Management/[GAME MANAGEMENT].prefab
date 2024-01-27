@@ -227,7 +227,6 @@ Transform:
   m_Children:
   - {fileID: 1361953568654759954}
   - {fileID: 3084873136395085310}
-  - {fileID: 8507778565306256971}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7108547145210170257
@@ -270,6 +269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ea9fc7179e894408f47542426f6823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 8372997965849602240, guid: e937eaefd0245ce4eb3747f96a665ecc, type: 3}
+  container: {fileID: 0}
+  debugLevel: -1
 --- !u!1 &6228935385043624911
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,48 +401,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &8291642764658182176
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8507778565306256971}
-  - component: {fileID: 1226710175993237231}
-  m_Layer: 0
-  m_Name: ContainersProvider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8507778565306256971
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8291642764658182176}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 301587087103181518}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1226710175993237231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8291642764658182176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d606e9c631a4a4791b7ad14f9e730f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemiesContainer: {fileID: 0}

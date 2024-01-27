@@ -17,7 +17,7 @@ namespace EnemyLogic.StateMachine
 
     #endregion
 
-    private void Awake()
+    private void Start()
     {
       _states = new Dictionary<Type, IExitableState>();
 
