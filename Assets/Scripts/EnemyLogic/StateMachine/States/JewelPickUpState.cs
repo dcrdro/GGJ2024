@@ -11,6 +11,9 @@ namespace EnemyLogic.StateMachine.States
     [SerializeField]
     private float _jewelPickingUpDelay;
 
+    [SerializeField]
+    private GameObject _jewelObject;
+
     [SerializeField, HideInInspector]
     private EnemyInterface _interface;
 
@@ -55,6 +58,7 @@ namespace EnemyLogic.StateMachine.States
     private void PickUpJewel()
     {
       _jewel.PickUp(transform);
+      _jewelObject.SetActive(true);
       _stateMachine.Enter<MoveToHouseEntranceFromInsideState>();
     }
 
