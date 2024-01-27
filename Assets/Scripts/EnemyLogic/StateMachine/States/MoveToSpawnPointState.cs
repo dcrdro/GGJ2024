@@ -1,4 +1,5 @@
-﻿using Extensions;
+﻿using Core;
+using Extensions;
 using UnityEngine;
 
 namespace EnemyLogic.StateMachine.States
@@ -26,11 +27,14 @@ namespace EnemyLogic.StateMachine.States
       _movement.OnTargetReached -= OnReachedTarget;
     }
 
-    private void OnReachedTarget() => 
-      Destroy(gameObject);
+        private void OnReachedTarget()
+        {
+            EnemySpawnPointsContainer.Instance.EscapedCount++;
+            Destroy(gameObject);
+        }
 
 #if UNITY_EDITOR
-    private void OnValidate()
+        private void OnValidate()
     {
       if (_movement == null)
         TryGetComponent(out _movement);
