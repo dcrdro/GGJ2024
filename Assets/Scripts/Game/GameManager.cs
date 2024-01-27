@@ -5,7 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject[] levels;
+    public Transform container;
+
+    int level;
+
+    public int debugLevel = -1;
+
     public bool GameOver { get; private set; }
+
+    private void Start()
+    {
+        level = debugLevel != -1 ? debugLevel : Mathf.Clamp(PlayerPrefs.GetInt("Level", 0), 0, levels.Length);
+        var instance = Instantiate(levels[level]);
+        instance.transform.parent = container;
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,6 +43,9 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0;
                 FindObjectOfType<UIManager>().ShowWin();
                 FindObjectOfType<AudioManager>().PlayWin();
+                
+                level = Mathf.Clamp(level + 1, 0, levels.Length - 1);
+                PlayerPrefs.SetInt("Level", level);
             }
         }
     }
