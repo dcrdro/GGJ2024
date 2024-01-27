@@ -60,7 +60,11 @@ namespace EnemyLogic
 
       CurrentTime += Time.deltaTime;
       if (IsTimeExceeded())
-        _onComplete?.Invoke();
+            {
+                _onComplete?.Invoke();
+                //_onComplete = null;
+            }
+
     }
 
     public bool IsTimeExceeded() => 

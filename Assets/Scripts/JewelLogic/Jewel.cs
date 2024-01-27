@@ -30,7 +30,9 @@ namespace JewelLogic
     public void Drop()
     {
       gameObject.SetActive(true);
-      transform.parent = null;
+            JewelsContainer.Instance.Add(this);
+
+            transform.parent = null;
       IsDropped = true;
     }
 

@@ -24,5 +24,12 @@ namespace EnemyLogic
 
     public void PlayOnFireTrap() => 
       _animator.SetTrigger("OnFireTrap");
+        
+    public void PlayOnIceTrap() => 
+      _animator.SetTrigger("OnIceTrap");
+        
+    public void PlayOnCageTrap() => 
+      _animator.SetTrigger("OnCageTrap");
+
   }
 }

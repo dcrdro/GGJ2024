@@ -15,5 +15,5 @@ public class TrapData : ScriptableObject
     public TrapType trapType;
     public ResourceRequirement[] requiredResources;
     public Sprite icon;
-    public GameObject prefab;
+    public Trap prefab;
 }

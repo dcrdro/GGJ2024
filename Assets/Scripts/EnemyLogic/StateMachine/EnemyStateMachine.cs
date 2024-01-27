@@ -42,18 +42,20 @@ namespace EnemyLogic.StateMachine
     public void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadedState<TPayload>
     {
       TState state = ChangeState<TState>();
-      state.Enter(payload);
+            state.Enter(payload);
     }
     
     public void Enter<TState, TPayload, FPayload>(TPayload payload, FPayload payload1) where TState : class, IPayloadedState<TPayload, FPayload>
     {
       TState state = ChangeState<TState>();
-      state.Enter(payload, payload1);
+            state.Enter(payload, payload1);
     }
 
     private TState ChangeState<TState>() where TState : class, IExitableState
     {
-      _activeState?.Exit();
+            Debug.Log($"switch state from {_activeState?.GetType().Name} to {typeof(TState).Name}", this);
+
+            _activeState?.Exit();
 
       TState state = GetState<TState>();
       _activeState = state;

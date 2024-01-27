@@ -50,7 +50,8 @@ public class TrapManager : MonoBehaviour
         Debug.Log("used " + trap);
         var prefab = trapDatabase[trap].prefab;
         var player = FindObjectOfType<Player>();
-        Instantiate(prefab, player.transform.position, Quaternion.identity);
+        var obj = Instantiate(prefab, player.transform.position, Quaternion.identity);
+        obj.TrapType = trap;
         FindObjectOfType<AudioManager>().PlayTrapPlace();
 
 
