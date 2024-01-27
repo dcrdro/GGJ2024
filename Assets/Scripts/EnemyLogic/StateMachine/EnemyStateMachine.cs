@@ -53,9 +53,8 @@ namespace EnemyLogic.StateMachine
 
     private TState ChangeState<TState>() where TState : class, IExitableState
     {
-            Debug.Log($"switch state from {_activeState?.GetType().Name} to {typeof(TState).Name}", this);
-
-            _activeState?.Exit();
+      Debug.Log($"switch state from {_activeState?.GetType().Name} to {typeof(TState).Name}", this);
+      _activeState?.Exit();
 
       TState state = GetState<TState>();
       _activeState = state;

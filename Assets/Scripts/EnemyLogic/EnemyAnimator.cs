@@ -31,5 +31,10 @@ namespace EnemyLogic
     public void PlayOnCageTrap() => 
       _animator.SetTrigger("OnCageTrap");
 
+    public void PlayClimbOver(float climbOverSpeed)
+    {
+      _animator.SetFloat("ClimbOverSpeed", climbOverSpeed);
+      _animator.SetTrigger("ClimbOverTrigger");
+    }
   }
 }
