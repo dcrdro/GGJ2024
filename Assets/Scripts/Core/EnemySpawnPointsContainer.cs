@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using JewelLogic;
+using System.Linq;
+using UnityEngine;
 
 namespace Core
 {
@@ -12,14 +14,17 @@ namespace Core
     #region Properties
 
     public Transform this[int index] => _spawnPoints[index];
-    public int Length => _spawnPoints.Length;
+        public int Length => _spawnPoints.Length;
 
 
     public int EscapedCount { get; set; }
 
-    #endregion
+        #endregion
 
-    private void Awake() => 
-      Instance = this;
-  }
+        private void Awake()
+        {
+            _spawnPoints = GetComponentsInChildren<Transform>().ToArray();
+            Instance = this;
+        }
+    }
 }

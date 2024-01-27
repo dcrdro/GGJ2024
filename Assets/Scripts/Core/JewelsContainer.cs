@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using JewelLogic;
 using UnityEngine;
 
@@ -21,23 +22,19 @@ namespace Core
       set => _jewels[index] = value;
     }
 
-    #endregion
+        #endregion
 
-    private void Awake() => 
-      Instance = this;
+        private void Awake()
+        {
+            _jewels = GetComponentsInChildren<Jewel>().ToList();
+            Instance = this;
+        }
 
-    public void Remove(Jewel jewel) => 
+        public void Remove(Jewel jewel) => 
       _jewels.Remove(jewel);
 
     public void Add(Jewel jewel) => 
       _jewels.Add(jewel);
 
-        private void OnDrawGizmos()
-        {
-            foreach (var d in _jewels)
-            {
-                Gizmos.DrawSphere(d.transform.position, 0.5f);
-            }
-        }
     }
 }

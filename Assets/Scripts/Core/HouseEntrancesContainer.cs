@@ -14,9 +14,12 @@ namespace Core
 
     public EntranceBase[] Entrances => _entrances;
 
-    #endregion
-    
-    private void Awake() => 
-      Instance = this;
-  }
+        #endregion
+
+        private void Awake()
+        {
+            _entrances = GetComponentsInChildren<EntranceBase>();   
+            Instance = this;
+        }
+    }
 }
