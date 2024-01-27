@@ -18,9 +18,18 @@ namespace EnemyLogic
     public event Action OnTargetReached; 
 
     #endregion
+
+    #region Properties
+
+    public float CurrentSpeed => _agent.speed;
+
+    #endregion
     
     public void SetTarget(Vector3 position) => 
       _agent.SetDestination(position);
+
+    public void SetSpeed(float value) => 
+      _agent.speed = value;
 
     public void ToggleMovement(bool state)
     {
