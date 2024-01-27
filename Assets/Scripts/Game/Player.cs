@@ -41,6 +41,7 @@ public class Player: MonoBehaviour
         if (jewel != null && jewel.IsDropped)
         {
             progress.Toggle(true);
+            jewel.StartPickingUp();
             timer.Play(1, () => { jewel.Return(); progress.Toggle(false); }, () => progress.SetValue(timer.NormalizedTime));
         }
     }

@@ -34,6 +34,7 @@ namespace EnemyLogic.StateMachine.States
       _jewel = jewel;
       SharedState.Jewel = jewel;
 
+      _jewel.StartPickingUp();
       _timer.Play(_jewelPickingUpDelay, PickUpJewel, UpdateProgressBar);
 
       float pickUpSpeed = 2.046f / _jewelPickingUpDelay;

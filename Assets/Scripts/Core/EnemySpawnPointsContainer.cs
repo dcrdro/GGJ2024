@@ -23,7 +23,7 @@ namespace Core
 
         private void Awake()
         {
-            _spawnPoints = GetComponentsInChildren<Transform>().ToArray();
+            // _spawnPoints = GetComponentsInChildren<Transform>().ToArray();
             Instance = this;
         }
     }

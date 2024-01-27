@@ -23,7 +23,7 @@ namespace EnemyLogic.StateMachine.States
       FindTarget();
 
       _movement.OnTargetReached += OnReachedJewel;
-      _currentJewel.OnPickedUp += FindTarget;
+      _currentJewel.OnStartPickingUp += FindTarget;
     }
 
     public override void Exit()
@@ -32,7 +32,7 @@ namespace EnemyLogic.StateMachine.States
       
       _movement.ToggleMovement(false);
       _movement.OnTargetReached -= OnReachedJewel;
-      _currentJewel.OnPickedUp -= FindTarget;
+      _currentJewel.OnStartPickingUp -= FindTarget;
     }
 
     private void FindTarget()

@@ -9,6 +9,7 @@ namespace JewelLogic
     #region Actions
 
     public event Action OnPickedUp;
+    public event Action OnStartPickingUp;
 
     #endregion
 
@@ -31,11 +32,16 @@ namespace JewelLogic
     public void Drop(Vector3 position)
     {
       gameObject.SetActive(true);
-            JewelsContainer.Instance.Add(this);
-
-            transform.parent = null;
-            transform.position = position;
+      JewelsContainer.Instance.Add(this);
+      transform.parent = null;
+      transform.position = position;
       IsDropped = true;
+    }
+
+    public void StartPickingUp()
+    {
+      JewelsContainer.Instance.Remove(this);
+      OnStartPickingUp?.Invoke();
     }
 
     public void PickUp(Transform target)
@@ -43,7 +49,6 @@ namespace JewelLogic
       gameObject.SetActive(false);
       transform.parent = target;
 
-      JewelsContainer.Instance.Remove(this);
       OnPickedUp?.Invoke();
     }
 
@@ -53,6 +58,8 @@ namespace JewelLogic
       transform.parent = null;
       transform.position = initPosition;
       IsDropped = false;
+      
+      JewelsContainer.Instance.Add(this);
     }
   }
 }
