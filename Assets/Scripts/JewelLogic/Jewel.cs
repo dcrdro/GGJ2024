@@ -28,12 +28,13 @@ namespace JewelLogic
             transform.rotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
     }
 
-    public void Drop()
+    public void Drop(Vector3 position)
     {
       gameObject.SetActive(true);
             JewelsContainer.Instance.Add(this);
 
             transform.parent = null;
+            transform.position = position;
       IsDropped = true;
     }
 

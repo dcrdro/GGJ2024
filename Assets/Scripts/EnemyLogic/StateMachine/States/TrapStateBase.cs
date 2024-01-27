@@ -35,7 +35,7 @@ namespace EnemyLogic.StateMachine.States
       DropJewel();
       
       _timer.Play(_stanDuration, TrapHasExpired);
-      _coroutine = StartCoroutine(ShowCamera());
+      //_coroutine = StartCoroutine(ShowCamera());
     }
 
         protected abstract void OnTrapStart();
@@ -43,7 +43,10 @@ namespace EnemyLogic.StateMachine.States
 
     private void DropJewel()
     {
-      _sharedState.Jewel?.Drop();
+            Vector3 offs = Random.insideUnitCircle.normalized;
+            offs = new Vector3(offs.x, 0, offs.y);
+            var pos = transform.position + offs * 1.5f;
+      _sharedState.Jewel?.Drop(pos);
       _sharedState.Jewel = null;
     }
 
@@ -55,7 +58,7 @@ namespace EnemyLogic.StateMachine.States
 
             _timer.Stop();
       _animator.LockAction(false);
-      StopCoroutine(_coroutine);
+      //StopCoroutine(_coroutine);
 
             Camera sharedStateTrapCamera = _sharedState.TrapCamera;
             GameObject trapRender = FindObjectOfType<UIManager>().trapRender;
