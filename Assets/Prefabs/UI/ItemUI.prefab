@@ -309,16 +309,20 @@ PrefabInstance:
       value: ImageX
       objectReference: {fileID: 0}
     - target: {fileID: 7154980626091709654, guid: 3e660d8025235f64a9a8523ed2fddedc, type: 3}
+      propertyPath: m_Color.a
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154980626091709654, guid: 3e660d8025235f64a9a8523ed2fddedc, type: 3}
       propertyPath: m_Color.b
-      value: 0.7725491
+      value: 0.7520097
       objectReference: {fileID: 0}
     - target: {fileID: 7154980626091709654, guid: 3e660d8025235f64a9a8523ed2fddedc, type: 3}
       propertyPath: m_Color.g
-      value: 0.81568635
+      value: 0.794
       objectReference: {fileID: 0}
     - target: {fileID: 7154980626091709654, guid: 3e660d8025235f64a9a8523ed2fddedc, type: 3}
       propertyPath: m_Color.r
-      value: 0.20000002
+      value: 0.2137692
       objectReference: {fileID: 0}
     - target: {fileID: 8439754241126156160, guid: 3e660d8025235f64a9a8523ed2fddedc, type: 3}
       propertyPath: m_Pivot.x

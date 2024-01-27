@@ -203,7 +203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.38}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5449631807713007318
@@ -316,8 +316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResourceType: 0
-  interval: 3
-  maxCount: 5
+  interval: 5
+  maxCount: 3
   resourcesDatabase: {fileID: 11400000, guid: 243fde9542cdbfc468d353a2f734479b, type: 2}
   timer: {fileID: 1389022703818422041}
   countText: {fileID: 4582881521276044702}

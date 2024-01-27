@@ -11,6 +11,13 @@ public class ItemUI : MonoBehaviour
     public ResourceType Type { get; set; }
 
     public void SetTitle(string name) => title.text = name;
-    public void SetCount(int n) => count.text = $"x{n}";
+    public void SetCount(int n)
+    {
+        count.text = $"x{n}";
+        var c = icon.color;
+        c.a = n == 0 ? 0.25f : 1; ;
+        icon.color = c;
+    }
+
     public void SetIcon(Sprite i) => icon.sprite = i;
 }
