@@ -31,5 +31,13 @@ namespace Core
 
     public void Add(Jewel jewel) => 
       _jewels.Add(jewel);
-  }
+
+        private void OnDrawGizmos()
+        {
+            foreach (var d in _jewels)
+            {
+                Gizmos.DrawSphere(d.transform.position, 0.5f);
+            }
+        }
+    }
 }

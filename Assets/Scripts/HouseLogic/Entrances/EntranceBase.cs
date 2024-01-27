@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace HouseLogic.Entrances
 {
@@ -13,6 +14,8 @@ namespace HouseLogic.Entrances
 
     [SerializeField]
     private Transform _insidePoint;
+
+        public NavMeshObstacle[] obstacles;
 
     #region Actions
 
@@ -43,6 +46,10 @@ namespace HouseLogic.Entrances
     public void Unlock()
     {
       _body.SetActive(false);
+            foreach (var obstacle in obstacles)
+            {
+                obstacle.enabled = false;
+            }
       
       _isAlreadyUnlocking = false;
       _isUnlocked = true;

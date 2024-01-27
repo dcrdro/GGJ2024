@@ -1,11 +1,14 @@
 ﻿using EnemyLogic.StateMachine;
 using EnemyLogic.StateMachine.States;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Trap : MonoBehaviour
 {
     public string AnimationParameter;
     public float animationTime;
+
+    public Image icon;
 
     public TrapType TrapType;
 

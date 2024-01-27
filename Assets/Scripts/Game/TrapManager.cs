@@ -52,6 +52,7 @@ public class TrapManager : MonoBehaviour
         var player = FindObjectOfType<Player>();
         var obj = Instantiate(prefab, player.transform.position, Quaternion.identity);
         obj.TrapType = trap;
+        obj.icon.sprite = trapDatabase[trap].icon;
         FindObjectOfType<AudioManager>().PlayTrapPlace();
 
 
