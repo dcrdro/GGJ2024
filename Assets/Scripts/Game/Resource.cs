@@ -3,11 +3,21 @@ using UnityEngine;
 
 public class Resoure : MonoBehaviour
 {
+    public float rotSpeed;
+    public float swaySpeed;
+    public float swayDist;
     public ResourceType resourceType { get; set; }
 
     public int Count { get; set; } = 1;
 
     public event Action Collected;
+
+    private void Update()
+    {
+        transform.Rotate(Vector3.up, rotSpeed * Time.deltaTime);
+        var sway = Mathf.Sin(Time.time * swaySpeed) * swayDist;
+        transform.position += transform.up * sway;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

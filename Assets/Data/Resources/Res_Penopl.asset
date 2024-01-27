@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba283ab13183dd440938c8f20468ed77, type: 3}
-  m_Name: Res_IceCream
+  m_Name: Res_Penopl
   m_EditorClassIdentifier: 
-  name: Ice Cream
-  resourceType: 3
-  icon: {fileID: 21300000, guid: fd3928b7ae921ec43ad2817e6bbfa46a, type: 3}
-  prefab: {fileID: 5326452432058063115, guid: 70b40a3d5c3c1704283208826fd0f657, type: 3}
+  name: Wire
+  resourceType: 5
+  icon: {fileID: 21300000, guid: 32902e34fb3108d4eb73a84283182524, type: 3}
+  prefab: {fileID: 5326452432058063115, guid: 600bd4c7289f6734c8db8c56b0056d93, type: 3}

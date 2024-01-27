@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Wire
   resourceType: 5
   icon: {fileID: 21300000, guid: 32902e34fb3108d4eb73a84283182524, type: 3}
-  prefab: {fileID: 3582123322955395073, guid: fe3a065fe5948604d98759f5a012c98e, type: 3}
+  prefab: {fileID: 5326452432058063115, guid: b452dccb120d31d4abdc254dfa461ad8, type: 3}

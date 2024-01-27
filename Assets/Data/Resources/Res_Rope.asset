@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Rope
   resourceType: 4
   icon: {fileID: 21300000, guid: dea4c970735d6a445a4b742fc4c21b53, type: 3}
-  prefab: {fileID: 5326452432058063115, guid: 005ee35b1a6d0c247b26e0bfb75fb2f2, type: 3}
+  prefab: {fileID: 5326452432058063115, guid: a4929f9adee7aa944be486731557a8d2, type: 3}
