@@ -12,11 +12,18 @@ public class Resoure : MonoBehaviour
 
     public event Action Collected;
 
+    private Vector3 initPos;
+
+    private void Awake()
+    {
+        initPos = transform.position;
+    }
+
     private void Update()
     {
         transform.Rotate(Vector3.up, rotSpeed * Time.deltaTime);
         var sway = Mathf.Sin(Time.time * swaySpeed) * swayDist;
-        transform.position += transform.up * sway;
+        transform.position = initPos + transform.up * sway;
     }
 
     private void OnTriggerEnter(Collider other)

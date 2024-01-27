@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotSpeed: 180
   swaySpeed: 3.6
-  swayDist: 0.008
+  swayDist: 0.45
 --- !u!135 &-6734260681003507183
 SphereCollider:
   m_ObjectHideFlags: 0
