@@ -25,6 +25,7 @@ namespace JewelLogic
     private void Awake()
     {
       initPosition = transform.position;
+            transform.rotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
     }
 
     public void Drop()
