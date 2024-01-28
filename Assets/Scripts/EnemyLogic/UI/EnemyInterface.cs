@@ -7,9 +7,13 @@ namespace EnemyLogic.UI
     [SerializeField]
     private ActionProgressBar _actionProgressBar;
 
+    [SerializeField]
+    private ActionProgressBar _healthProgressBar;
+    
     #region Properties
 
     public ActionProgressBar ActionProgressBar => _actionProgressBar;
+    public ActionProgressBar HealthProgressBar => _healthProgressBar;
 
     #endregion
   }
