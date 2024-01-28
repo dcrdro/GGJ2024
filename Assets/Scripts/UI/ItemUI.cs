@@ -15,7 +15,7 @@ public class ItemUI : MonoBehaviour
     {
         count.text = $"x{n}";
         var c = icon.color;
-        c.a = n == 0 ? 0.25f : 1; ;
+        c.a = n == 0 ? 0.5f : 1; ;
         icon.color = c;
     }
 

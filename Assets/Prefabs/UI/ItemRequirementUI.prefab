@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9061099374503027778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 8720754693792233570}
   - component: {fileID: 8723566970766936712}
   - component: {fileID: 714046202715744523}
+  - component: {fileID: 2620574345340144555}
   m_Layer: 5
   m_Name: Text (Legacy) (1)
   m_TagString: Untagged
@@ -233,6 +234,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: x1
+--- !u!114 &2620574345340144555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699244602638984981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4916537257289089389
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +287,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 84.4771, y: 84.4771}
+  m_SizeDelta: {x: 74.8978, y: 74.8978}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3390823991715886865
 MonoBehaviour:
