@@ -17,8 +17,6 @@ MonoBehaviour:
   requiredResources:
   - type: 3
     count: 2
-  - type: 4
-    count: 2
   - type: 6
     count: 1
   icon: {fileID: 21300000, guid: f35d81814ad5e8549bd2e75a0e1f55ba, type: 3}
