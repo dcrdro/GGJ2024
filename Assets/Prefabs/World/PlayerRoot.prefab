@@ -219,6 +219,7 @@ MonoBehaviour:
   speed: 3.5
   rotSpd: 360
   animator: {fileID: 5014977273245882589}
+  rb: {fileID: 5825452989320460871}
   timer: {fileID: 5158898575430575664}
   progress: {fileID: 8168006730733846225}
   camera: {fileID: 7637184107035188328}
