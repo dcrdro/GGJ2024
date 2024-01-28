@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] levels;
+    public float[] cameraSizes;
+
     public Transform container;
 
     int level;
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         level = debugLevel != -1 ? debugLevel : Mathf.Clamp(PlayerPrefs.GetInt("Level", 0), 0, levels.Length);
         var instance = Instantiate(levels[level]);
+        Camera.main.orthographicSize = cameraSizes[level];
         instance.transform.parent = container;
     }
 

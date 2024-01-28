@@ -271,6 +271,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 8372997965849602240, guid: e937eaefd0245ce4eb3747f96a665ecc, type: 3}
+  - {fileID: 8372997965849602240, guid: 6828c0d29c91d6a4b88b16fd43dcddca, type: 3}
+  cameraSizes:
+  - 10
+  - 7.5
   container: {fileID: 0}
   debugLevel: -1
 --- !u!1 &6228935385043624911
