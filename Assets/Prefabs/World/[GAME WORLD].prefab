@@ -470,4 +470,4 @@ MonoBehaviour:
   camera: {fileID: 8636453987124097860}
   target: {fileID: 9039174437738075094}
   maxDist: {x: 12, y: 0, z: 5}
-  maxOffset: 1
+  maxOffset: 2
