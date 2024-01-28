@@ -16,6 +16,9 @@ namespace Core
     #region Properties
 
     public int Length => _jewels.Count;
+        public int StolenCount { get; set; }
+
+        public int initcount;
 
     public Jewel this[int index]
     {
@@ -28,6 +31,7 @@ namespace Core
     private void Awake()
     {
       _jewels = GetComponentsInChildren<Jewel>().ToList();
+            initcount = _jewels.Count;
       Instance = this;
     }
 

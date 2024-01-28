@@ -55,7 +55,7 @@ namespace EnemyLogic
       {
         HealthProgressBar.Toggle(false);
         _movement.SetSpeed(_movement.CurrentSpeed * 3);
-        EnemiesDiedCounter.Instance.IncreaseDiedEnemiesCount();
+        //EnemiesDiedCounter.Instance.IncreaseDiedEnemiesCount();
       }
     }
 

@@ -15,8 +15,8 @@ namespace EnemyLogic.StateMachine.States
 
     public void Enter()
     {
-      if(_sharedState.Jewel != null)
-        JewelsCounter.Instance.DecreaseJewelsCount();
+      //if(_sharedState.Jewel != null)
+        //JewelsCounter.Instance.DecreaseJewelsCount();
       
       Transform closestSpawnPoint = NavMeshExtensions.FindClosestSpawnPoint(transform.position);
 
@@ -37,7 +37,14 @@ namespace EnemyLogic.StateMachine.States
     private void OnReachedTarget()
     {
       EnemySpawnPointsContainer.Instance.EscapedCount++;
-      Destroy(gameObject);
+            if (_sharedState.Jewel)
+            {
+                JewelsContainer.Instance.StolenCount++;
+                JewelsCounter.Instance.DecreaseJewelsCount();
+            }
+
+                FindObjectOfType<EnemiesDiedCounter>().IncreaseDiedEnemiesCount();
+            Destroy(gameObject);
     }
 
 #if UNITY_EDITOR

@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour
     {
         if (!GameOver)
         {
-            if (EnemySpawnPointsContainer.Instance.EscapedCount >= EnemySpawnPointsContainer.Instance.Length &&
-                JewelsContainer.Instance.Length <= 0)
+            if (JewelsContainer.Instance.StolenCount >= JewelsContainer.Instance.initcount)
             {
                 GameOver = true;
                 Time.timeScale = 0;
