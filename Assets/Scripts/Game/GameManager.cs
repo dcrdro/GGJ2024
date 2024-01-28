@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         level = debugLevel != -1 ? debugLevel : Mathf.Clamp(PlayerPrefs.GetInt("Level", 0), 0, levels.Length);
         var instance = Instantiate(levels[level]);
         Camera.main.orthographicSize = cameraSizes[level];

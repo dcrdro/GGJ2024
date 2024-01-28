@@ -406,10 +406,6 @@ PrefabInstance:
       propertyPath: container
       value: 
       objectReference: {fileID: 494627830}
-    - target: {fileID: 1539758098677571217, guid: 8229c606d5a28864bb6326dca9c17465, type: 3}
-      propertyPath: debugLevel
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5114846958344250041, guid: 8229c606d5a28864bb6326dca9c17465, type: 3}
       propertyPath: m_Name
       value: '[GAME MANAGEMENT]'
