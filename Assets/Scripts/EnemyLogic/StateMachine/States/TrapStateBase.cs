@@ -64,10 +64,10 @@ namespace EnemyLogic.StateMachine.States
 
     private void DropJewel()
     {
-      Vector3 offs = Random.insideUnitCircle.normalized;
+            Vector3 offs = -transform.forward;
       offs = new Vector3(offs.x, 0, offs.y);
 
-      var pos = transform.position + offs * 1.5f;
+      var pos = transform.position + offs * 3f;
       _sharedState.Jewel?.Drop(pos);
       _sharedState.Jewel = null;
       _jewelObject.SetActive(false);
