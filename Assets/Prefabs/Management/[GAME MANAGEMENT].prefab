@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundSource: {fileID: 1100150648821795298}
+  musicSource: {fileID: 514570870211344586}
   resource: {fileID: 8300000, guid: c3b6841467f59b24ea52b0bcea2b24a0, type: 3}
   trapPlace: {fileID: 8300000, guid: 34a71bfa0fd1e2346b5d14edd5d4f058, type: 3}
   trapCatch: {fileID: 8300000, guid: c25811707003c9e4bb9b5a1658056937, type: 3}
