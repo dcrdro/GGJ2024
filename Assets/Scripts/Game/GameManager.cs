@@ -58,8 +58,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OpenMenu() => SceneManager.LoadScene(0);
+    public void OpenMenu()
+    {
+        Resume();
+        SceneManager.LoadScene(0);
+    }
+
     public void Restart() => SceneManager.LoadScene(1);
     public void Continue() => SceneManager.LoadScene(1);
     public void Exit() => Application.Quit();
+    public void Pause() => Time.timeScale = 0;
+    public void Resume()
+    {
+        UIManager.Instance.pausePanel.SetActive(false);
+        Time.timeScale = 1;
+    }
 }
