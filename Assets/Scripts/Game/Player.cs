@@ -9,6 +9,7 @@ public class Player: MonoBehaviour
     public float rotSpd = 5f;
 
     public Animator animator;
+    public Rigidbody rb;
 
     public Timer timer;
     public ActionProgressBar progress;
@@ -17,19 +18,19 @@ public class Player: MonoBehaviour
 
     public Camera camera;
 
-    void Update()
+    void FixedUpdate()
     { 
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * speed * Time.deltaTime;
 
-        transform.position += (movement);
+        rb.position += (movement);
 
         if (movement != Vector3.zero)
         {
             trot = Quaternion.LookRotation(movement);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, trot, rotSpd * Time.deltaTime);
+            rb.rotation = Quaternion.RotateTowards(transform.rotation, trot, rotSpd * Time.deltaTime);
         }
 
         animator.SetFloat("MoveSpeed", movement.magnitude);
