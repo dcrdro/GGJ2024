@@ -5253,11 +5253,8 @@ MonoBehaviour:
   _jewels:
   - {fileID: 111095005973166306}
   - {fileID: 6881347620287111665}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 2664656925260299356}
   - {fileID: 2681030571061475335}
-  - {fileID: 0}
 --- !u!1 &2517091811516428663
 GameObject:
   m_ObjectHideFlags: 0

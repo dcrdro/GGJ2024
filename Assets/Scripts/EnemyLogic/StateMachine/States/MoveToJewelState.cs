@@ -1,4 +1,6 @@
-﻿using Extensions;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Extensions;
 using JewelLogic;
 using UnityEngine;
 
@@ -23,7 +25,9 @@ namespace EnemyLogic.StateMachine.States
       FindTarget();
 
       _movement.OnTargetReached += OnReachedJewel;
-      _currentJewel.OnStartPickingUp += FindTarget;
+      
+      if(_currentJewel != null)
+        _currentJewel.OnStartPickingUp += FindTarget;
     }
 
     public override void Exit()
@@ -32,12 +36,20 @@ namespace EnemyLogic.StateMachine.States
       
       _movement.ToggleMovement(false);
       _movement.OnTargetReached -= OnReachedJewel;
-      _currentJewel.OnStartPickingUp -= FindTarget;
+      
+      if(_currentJewel != null)
+       _currentJewel.OnStartPickingUp -= FindTarget;
     }
 
     private void FindTarget()
     {
       _currentJewel = NavMeshExtensions.FindClosestJewel(transform.position);
+      if (_currentJewel == null)
+      {
+        StartCoroutine(WaitJewelSpawn());
+        return;
+      }
+      
       
       _movement.ToggleMovement(true);
       _movement.SetTarget(_currentJewel.Position);
@@ -45,6 +57,22 @@ namespace EnemyLogic.StateMachine.States
 
     private void OnReachedJewel() => 
       _stateMachine.Enter<JewelPickUpState, Jewel>(_currentJewel);
+
+    private IEnumerator WaitJewelSpawn()
+    {
+      while (true)
+      {
+        yield return new WaitForSeconds(1f);
+        _currentJewel = NavMeshExtensions.FindClosestJewel(transform.position);
+
+        if (_currentJewel != null)
+        {
+          _movement.ToggleMovement(true);
+          _movement.SetTarget(_currentJewel.Position);
+          yield break;
+        }
+      }
+    }
 
 #if UNITY_EDITOR
     private void OnValidate()
