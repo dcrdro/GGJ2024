@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EnemyLogic.StateMachine.States
 {
-  public abstract class TrapStateBase : ExitableStateBase, IState
+  public abstract class TrapStateBase : ExitableStateBase, IPayloadedState<float>
   {
     [SerializeField]
     protected float _stanDuration;
@@ -36,7 +36,7 @@ namespace EnemyLogic.StateMachine.States
 
     #endregion
 
-    public void Enter()
+    public void Enter(float damage)
     {
       _animator.LockAction(true);
 
@@ -47,7 +47,7 @@ namespace EnemyLogic.StateMachine.States
       _timer.Play(_stanDuration, TrapHasExpired);
       StartCoroutine(Wait(soundDelay));
 
-      _health.TakeDamage(1);
+      _health.TakeDamage((int) damage);
 
       //_coroutine = StartCoroutine(ShowCamera());
     }

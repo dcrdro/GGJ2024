@@ -21,6 +21,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: c4ea999a994d3aa45a83585972baf45d, type: 3}
     - target: {fileID: 3278664310696189798, guid: 464f72f3a9f22564ab0b156b0c802ad8, type: 3}
+      propertyPath: damage
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278664310696189798, guid: 464f72f3a9f22564ab0b156b0c802ad8, type: 3}
       propertyPath: TrapType
       value: 2
       objectReference: {fileID: 0}
