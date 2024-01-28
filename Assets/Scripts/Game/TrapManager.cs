@@ -8,6 +8,8 @@ public class TrapManager : MonoBehaviour
     public ResourcesDatabase resourcesDatabase;
     public Inventory inventory;
 
+    public TrapType[] startTypes;
+
     public TrapManagerUI ui;
 
     void Start()
@@ -16,8 +18,13 @@ public class TrapManager : MonoBehaviour
         inventory.Updated += Inventory_Updated;
         inventory.Removed += Inventory_Removed;
 
-        foreach (var trap in trapDatabase.traps)
+    }
+
+    public void Init(TrapType[] startTypes)
+    {
+        foreach (var t in startTypes)
         {
+            var trap = trapDatabase[t];
             ui.CreateButton(trap, resourcesDatabase);
         }
         ui.UpdateEnableStatus();

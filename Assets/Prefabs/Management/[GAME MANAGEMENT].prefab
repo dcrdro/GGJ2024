@@ -244,6 +244,7 @@ MonoBehaviour:
   trapDatabase: {fileID: 11400000, guid: 36135149b88cbc14da99a04293d40db9, type: 2}
   resourcesDatabase: {fileID: 11400000, guid: 243fde9542cdbfc468d353a2f734479b, type: 2}
   inventory: {fileID: 6572856941994801862}
+  startTypes: 
   ui: {fileID: 0}
 --- !u!114 &6572856941994801862
 MonoBehaviour:
@@ -269,13 +270,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ea9fc7179e894408f47542426f6823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 8372997965849602240, guid: 6828c0d29c91d6a4b88b16fd43dcddca, type: 3}
-  - {fileID: 8372997965849602240, guid: e937eaefd0245ce4eb3747f96a665ecc, type: 3}
-  cameraSizes:
-  - 10
-  - 7.5
   container: {fileID: 0}
+  configs:
+  - levels: {fileID: 8372997965849602240, guid: 6828c0d29c91d6a4b88b16fd43dcddca, type: 3}
+    cameraSize: 7.5
+    startTypes: 0100000002000000
+  - levels: {fileID: 8372997965849602240, guid: e937eaefd0245ce4eb3747f96a665ecc, type: 3}
+    cameraSize: 10.5
+    startTypes: 010000000200000003000000
   debugLevel: -1
 --- !u!1 &6228935385043624911
 GameObject:

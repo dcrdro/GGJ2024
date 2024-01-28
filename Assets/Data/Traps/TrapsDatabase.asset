@@ -15,3 +15,4 @@ MonoBehaviour:
   traps:
   - {fileID: 11400000, guid: 24a00acbafcdd4642894a73f56fb815a, type: 2}
   - {fileID: 11400000, guid: 5fa411c4ec3a7cb4f94396ef0381560e, type: 2}
+  - {fileID: 11400000, guid: 398bf18fe8720814ab1eaff604b5add4, type: 2}
