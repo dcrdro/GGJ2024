@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3596706932440379420}
   - component: {fileID: 2148115734823517568}
   - component: {fileID: 5733500780197867179}
-  - component: {fileID: 360255980639353133}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -107,22 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!208 &360255980639353133
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2287599830054126189}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &4384901191250727074
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3444189120783652807}
   - component: {fileID: 6699322228902256584}
+  - component: {fileID: 1260493102499959318}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -315,7 +299,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c63e1ff87147dc87cb63a8cb8ae154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _delayBeforeLock: 15
   _body: {fileID: 2287599830054126189}
   _outsidePoint: {fileID: 3202061583099044473}
   _insidePoint: {fileID: 2190214130527816472}
+  _timer: {fileID: 1260493102499959318}
   obstacles: []
+--- !u!114 &1260493102499959318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364611975339829884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34d9860e26743ffbc6a54c592b15038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

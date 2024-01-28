@@ -1,4 +1,5 @@
 ﻿using System;
+using EnemyLogic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,6 +7,9 @@ namespace HouseLogic.Entrances
 {
   public abstract class EntranceBase : MonoBehaviour
   {
+    [SerializeField]
+    private float _delayBeforeLock;
+    
     [SerializeField]
     private GameObject _body;
 
@@ -15,14 +19,17 @@ namespace HouseLogic.Entrances
     [SerializeField]
     private Transform _insidePoint;
 
-        public NavMeshObstacle[] obstacles;
+    [SerializeField]
+    private Timer _timer;
+    
+    public NavMeshObstacle[] obstacles;
 
     #region Actions
 
     public event Action OnUnlocked;
 
     #endregion
-    
+
     #region Properties
 
     public Vector3 OutsidePoint => _outsidePoint.position;
@@ -40,20 +47,22 @@ namespace HouseLogic.Entrances
 
     #endregion
 
-    public void StartUnlocking() => 
+    public void StartUnlocking() =>
       _isAlreadyUnlocking = true;
 
     public void Unlock()
     {
-      _body.SetActive(false);
-            foreach (var obstacle in obstacles)
-            {
-                obstacle.enabled = false;
-            }
+      _timer.Play(_delayBeforeLock, Lock);
       
+      _body.SetActive(false);
+      foreach (var obstacle in obstacles)
+      {
+        obstacle.enabled = false;
+      }
+
       _isAlreadyUnlocking = false;
       _isUnlocked = true;
-      
+
       OnUnlocked?.Invoke();
     }
 
