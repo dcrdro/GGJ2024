@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class InventoryUI : MonoBehaviour
 {

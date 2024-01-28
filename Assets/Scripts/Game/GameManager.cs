@@ -62,4 +62,5 @@ public class GameManager : MonoBehaviour
     public void Restart() => SceneManager.LoadScene(1);
     public void Continue() => SceneManager.LoadScene(1);
     public void Exit() => Application.Quit();
+    public void Clear() => PlayerPrefs.DeleteAll();
 }

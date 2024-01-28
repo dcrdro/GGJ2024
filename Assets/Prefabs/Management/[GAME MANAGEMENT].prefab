@@ -147,7 +147,7 @@ MonoBehaviour:
   trapPlace: {fileID: 8300000, guid: 34a71bfa0fd1e2346b5d14edd5d4f058, type: 3}
   trapCatch: {fileID: 8300000, guid: c25811707003c9e4bb9b5a1658056937, type: 3}
   win: {fileID: 8300000, guid: 5bbff1858e16d7344a5f74eec6f59cfd, type: 3}
-  lose: {fileID: 8300000, guid: 5bbff1858e16d7344a5f74eec6f59cfd, type: 3}
+  lose: {fileID: 8300000, guid: 8ecf8ed03846b974facd1a57c772bcb2, type: 3}
 --- !u!1 &5095742089324899030
 GameObject:
   m_ObjectHideFlags: 0
