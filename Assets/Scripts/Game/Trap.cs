@@ -10,6 +10,7 @@ public class Trap : MonoBehaviour
     public float animationTime;
 
     public Image icon;
+    public int damage;
 
     public TrapType TrapType;
 
@@ -26,16 +27,16 @@ public class Trap : MonoBehaviour
                 case TrapType._TestTrap1:
                     break;
                 case TrapType.Fire:
-                    stateMachine.Enter<FireTrapState>();
+                    stateMachine.Enter<FireTrapState, float>(damage);
                     delay = 0;
                     break;
                 case TrapType.Ice:
-                    stateMachine.Enter<IceTrapState>();
+                    stateMachine.Enter<IceTrapState, float>(damage);
                     delay = 0;
 
                     break;
                 case TrapType.Cage:
-                    stateMachine.Enter<CageTrapState>();
+                    stateMachine.Enter<CageTrapState, float>(damage);
                     delay = 1;
 
                     break;

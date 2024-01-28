@@ -273,7 +273,7 @@ MonoBehaviour:
   container: {fileID: 0}
   configs:
   - levels: {fileID: 8372997965849602240, guid: 6828c0d29c91d6a4b88b16fd43dcddca, type: 3}
-    cameraSize: 7.5
+    cameraSize: 9.5
     startTypes: 0100000002000000
   - levels: {fileID: 8372997965849602240, guid: e937eaefd0245ce4eb3747f96a665ecc, type: 3}
     cameraSize: 10.5
