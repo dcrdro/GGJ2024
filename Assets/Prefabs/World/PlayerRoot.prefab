@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59832e5d9e0424e40b77f410dc023b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3.5
   rotSpd: 360
   animator: {fileID: 5014977273245882589}
   timer: {fileID: 5158898575430575664}

@@ -71,6 +71,10 @@ namespace HouseLogic.Entrances
     {
       _body.SetActive(true);
       _isUnlocked = false;
-    }
+            foreach (var obstacle in obstacles)
+            {
+                obstacle.enabled = true;
+            }
+        }
   }
 }

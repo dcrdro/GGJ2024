@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7792716494405987537}
   - component: {fileID: 8147439966796086525}
   - component: {fileID: 6882267916308203249}
-  - component: {fileID: 6957897736507685759}
+  - component: {fileID: 5672773326272519512}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!208 &6957897736507685759
+--- !u!208 &5672773326272519512
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,6 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 179462207472537755}
   - component: {fileID: 1540225154245479821}
+  - component: {fileID: 7126572133263149801}
   m_Layer: 0
   m_Name: Window
   m_TagString: Untagged
@@ -338,12 +339,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c3f3c6075b49f1b9b9e02f4187f837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _delayBeforeLock: 15
   _body: {fileID: 7376990224480540441}
   _outsidePoint: {fileID: 1863828860523954882}
   _insidePoint: {fileID: 6717901469590072956}
+  _timer: {fileID: 7126572133263149801}
   obstacles:
-  - {fileID: 6957897736507685759}
-  - {fileID: 5916418770643427132}
+  - {fileID: 5672773326272519512}
+  - {fileID: 1756779729473059846}
+--- !u!114 &7126572133263149801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5468264435329471283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34d9860e26743ffbc6a54c592b15038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7376990224480540441
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +370,7 @@ GameObject:
   - component: {fileID: 6579918189255868025}
   - component: {fileID: 6130122218990095817}
   - component: {fileID: 3722451242769806420}
-  - component: {fileID: 5916418770643427132}
+  - component: {fileID: 1756779729473059846}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -428,7 +443,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!208 &5916418770643427132
+--- !u!208 &1756779729473059846
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

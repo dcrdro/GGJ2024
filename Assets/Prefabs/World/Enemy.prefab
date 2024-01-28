@@ -248,7 +248,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.26
-  m_Speed: 3
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 360
@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 2926194461631672457}
+  _sharedState: {fileID: 7808270959362671812}
 --- !u!114 &3374629501955595367
 MonoBehaviour:
   m_ObjectHideFlags: 0
