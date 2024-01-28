@@ -709,9 +709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ea9fc7179e894408f47542426f6823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
-  cameraSizes: []
   container: {fileID: 0}
+  configs: []
   debugLevel: -1
 --- !u!1001 &7308028634729913637
 PrefabInstance:
