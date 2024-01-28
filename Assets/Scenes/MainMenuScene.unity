@@ -308,6 +308,10 @@ PrefabInstance:
       value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 2636642451508722504, guid: 60274f3bd038d0c4cae5e529b2bc27dd, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 62be08b2e80652c45955ada32d711c5e, type: 3}
+    - target: {fileID: 2636642451508722504, guid: 60274f3bd038d0c4cae5e529b2bc27dd, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 83
       objectReference: {fileID: 0}
@@ -803,7 +807,7 @@ PrefabInstance:
     - target: {fileID: 1288480790, guid: 9f806cbc6fafa584eb1a02c3e0077271, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 4db0fbbd3b26d544e85c719683eca063, type: 3}
+      objectReference: {fileID: 12800000, guid: 7f92b6455cdccde43a36eb81b62fe36b, type: 3}
     - target: {fileID: 1288480790, guid: 9f806cbc6fafa584eb1a02c3e0077271, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 175
