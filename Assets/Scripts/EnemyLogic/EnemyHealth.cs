@@ -1,5 +1,6 @@
 using System;
 using EnemyLogic.UI;
+using UI;
 using UnityEngine;
 
 namespace EnemyLogic
@@ -43,6 +44,9 @@ namespace EnemyLogic
 
     public void TakeDamage(int value)
     {
+      if(IsDied)
+        return;
+      
       _currentHealth -= value;
 
       HealthProgressBar.SetValue((float)_currentHealth / _health);
@@ -51,6 +55,7 @@ namespace EnemyLogic
       {
         HealthProgressBar.Toggle(false);
         _movement.SetSpeed(_movement.CurrentSpeed * 3);
+        EnemiesDiedCounter.Instance.IncreaseDiedEnemiesCount();
       }
     }
 

@@ -1,5 +1,6 @@
 ﻿using Core;
 using System.Collections;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +20,9 @@ public class GameManager : MonoBehaviour
         level = debugLevel != -1 ? debugLevel : Mathf.Clamp(PlayerPrefs.GetInt("Level", 0), 0, levels.Length);
         var instance = Instantiate(levels[level]);
         instance.transform.parent = container;
+        
+        EnemiesDiedCounter.Instance.Initialize();
+        JewelsCounter.Instance.Initialize();
     }
 
     // Update is called once per frame
